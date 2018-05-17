@@ -22,6 +22,17 @@ About bib
 -   This will give the file consistent spacing/naming/etc.
 -   The `papers.bib` file was last generated on 05/17/2018
 
+Downloading
+-----------
+
+You can download the latest version into your projects using the
+following code:
+
+    fileUrl <- "https://raw.githubusercontent.com/jvcasillas/mySources/master/papers.bib"
+    download.file(fileUrl, destfile = "papers.bib", method = "curl")
+
+    bib <- ReadBib("papers.bib", check = FALSE)
+
 Load bib
 --------
 
