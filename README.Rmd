@@ -1,5 +1,5 @@
 ---
-output: md_document
+output: github_document
 ---
 
 ## Load libraries
@@ -14,7 +14,7 @@ library(here)
 
 ```{r setup, include=FALSE}
 opts_knit$set(upload.fun = imgur_upload, base.url = NULL)
-opts_chunk$set(fig.width=8, fig.height=5, cache=TRUE, fig.retina=2)
+opts_chunk$set(fig.width=10, fig.height=5, cache=TRUE, fig.retina=2)
 ```
 
 ## About bib
@@ -70,7 +70,9 @@ counts %>%
     theme_test()
 ```
 
-```{r, 'journal'}
+## Journals
+
+```{r, 'journal', fig.height=8}
 data %>% 
   group_by(., journal) %>% 
   summarize(., counts = n()) %>% 
