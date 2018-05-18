@@ -209,6 +209,16 @@ bib %>%
     coord_flip()
 ```
 
+## List of incomplete articles
+
+```{r, 'incompletes-to-fix'}
+bib %>% 
+  filter(., CATEGORY == "ARTICLE") %>% 
+  select(., CATEGORY, YEAR, TITLE, PAGES, JOURNAL, AUTHOR) %>% 
+  filter_all(., any_vars(is.na(.))) %>% 
+  select(., AUTHOR, TITLE) %>% 
+  kable(., output = 'html')
+```
 
 ```{r, 'cleanup'}
 unlink("cache", recursive = TRUE)
