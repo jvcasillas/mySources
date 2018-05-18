@@ -203,7 +203,8 @@ bib %>%
     geom_bar(stat = "identity", color = 'black', fill = 'grey30', width = 0.5) + 
     geom_point(pch = 21, fill = 'grey60', size = 15) + 
     geom_text(color = 'white') + 
-    ylim(c(0,1)) +
+    ylim(c(0, 1)) + 
+    scale_x_discrete(expand = expand_scale(0.1)) + 
     labs(y = "Proportion Missing", x = "Field") + 
     coord_flip()
 ```
