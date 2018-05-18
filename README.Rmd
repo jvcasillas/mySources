@@ -46,7 +46,7 @@ download.file(fileUrl, destfile = "papers.bib", method = "curl")
 ## Load bib
 
 ```{r, 'load-bib'}
-bib <- bib2df("papers.bib")
+bib <- bib2df("papers.bib") 
 ```
 
 
@@ -223,7 +223,7 @@ get_cols <- function(bib) {
 bib %>% 
   filter(., CATEGORY == "ARTICLE") %>% 
   select(., BIBTEXKEY, YEAR, VOLUME, TITLE, PAGES, NUMBER, 
-            MONTH, JOURNAL, AUTHOR) %>%   
+            JOURNAL, AUTHOR) %>%   
   filter_all(., any_vars(is.na(.))) %>% 
   mutate(., n = row_number(), what = get_cols(.)) %>% 
   select(., n, BIBTEXKEY, TITLE, what) %>% 

@@ -40,8 +40,11 @@ download.file(fileUrl, destfile = "papers.bib", method = "curl")
 ## Load bib
 
 ``` r
-bib <- bib2df("papers.bib")
+bib <- bib2df("papers.bib") 
 ```
+
+    ## Column `YEAR` contains character strings.
+    ##               No coercion to numeric applied.
 
 ## Citation Types
 
