@@ -175,7 +175,7 @@ betweenness(cograph) %>%
     coord_flip()
 ```
 
-<img src="https://i.imgur.com/2wjD4nL.png" width="960" />
+<img src="https://i.imgur.com/2Kw0D5z.png" width="960" />
 
 ## Publication Years
 

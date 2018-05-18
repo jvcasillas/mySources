@@ -157,7 +157,7 @@ cograph %>%
 
 ### Betweenness centrality (?)
 
-```{r, 'betweeness-centrality'}
+```{r, 'betweeness-centrality', fig.height=7}
 betweenness(cograph) %>% 
   data.frame(betweenness = .) %>% 
   mutate(., authors = rownames(.)) %>% 
@@ -176,7 +176,7 @@ betweenness(cograph) %>%
 
 ## Publication Years
 
-```{r, 'year', fig.retina=2}
+```{r, 'year'}
 bib %>% 
   ggplot(., aes(x = YEAR)) + 
     geom_histogram(binwidth = 1, color = 'black', fill = 'grey60') + 
