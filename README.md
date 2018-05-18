@@ -233,7 +233,7 @@ get_cols <- function(bib) {
 bib %>% 
   filter(., CATEGORY == "ARTICLE") %>% 
   select(., BIBTEXKEY, YEAR, VOLUME, TITLE, PAGES, NUMBER, 
-            MONTH, JOURNAL, AUTHOR) %>%   
+            JOURNAL, AUTHOR) %>%   
   filter_all(., any_vars(is.na(.))) %>% 
   mutate(., n = row_number(), what = get_cols(.)) %>% 
   select(., n, BIBTEXKEY, TITLE, what) %>% 
@@ -288,35 +288,6 @@ what
 
 <td style="text-align:left;">
 
-Sebastian-Galles:2009qf
-
-</td>
-
-<td style="text-align:left;">
-
-Developmental shift in the discrimination of vowel contrasts in
-bilingual infants: is the distributional account all there is to it?
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-2
-
-</td>
-
-<td style="text-align:left;">
-
 broersma2010perception
 
 </td>
@@ -330,7 +301,7 @@ use of vowel duration
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -340,7 +311,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-3
+2
 
 </td>
 
@@ -359,7 +330,7 @@ listeners
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -369,7 +340,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-4
+3
 
 </td>
 
@@ -388,7 +359,7 @@ competence in a study abroad context
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -398,177 +369,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-5
-
-</td>
-
-<td style="text-align:left;">
-
-Sumner2011
-
-</td>
-
-<td style="text-align:left;">
-
-The role of variation in the perception of accented speech.
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-6
-
-</td>
-
-<td style="text-align:left;">
-
-Diehl:1989ej
-
-</td>
-
-<td style="text-align:left;">
-
-On the Objects of Speech Perception
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-7
-
-</td>
-
-<td style="text-align:left;">
-
-abrahamsson2012age
-
-</td>
-
-<td style="text-align:left;">
-
-Age of onset and nativelike L2 ultimate attainment of morphosyntactic
-and phonetic intuition
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-8
-
-</td>
-
-<td style="text-align:left;">
-
-Au:2008bk
-
-</td>
-
-<td style="text-align:left;">
-
-Salvaging a childhood language
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-9
-
-</td>
-
-<td style="text-align:left;">
-
-mcgurk1976
-
-</td>
-
-<td style="text-align:left;">
-
-Hearing Lips and Seeing Voices
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-10
-
-</td>
-
-<td style="text-align:left;">
-
-Sundara:2006iq
-
-</td>
-
-<td style="text-align:left;">
-
-Language-experience facilitates discrimination of /d-{}/ in monolingual
-and bilingual acquisition of English
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-11
+4
 
 </td>
 
@@ -596,7 +397,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-12
+5
 
 </td>
 
@@ -614,7 +415,7 @@ Alternate Phonemic Analyses of Comanche
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -624,7 +425,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-13
+6
 
 </td>
 
@@ -652,35 +453,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-14
-
-</td>
-
-<td style="text-align:left;">
-
-Campbell-Kibler2007
-
-</td>
-
-<td style="text-align:left;">
-
-Accent, (Ing), and the Social Logic of Listener Perceptions
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-15
+7
 
 </td>
 
@@ -699,7 +472,7 @@ effects of listeners{} native languages
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -709,7 +482,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-16
+8
 
 </td>
 
@@ -728,7 +501,7 @@ measurements and accentedness ratings.
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -738,7 +511,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-17
+9
 
 </td>
 
@@ -757,7 +530,7 @@ vowels
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -767,7 +540,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-18
+10
 
 </td>
 
@@ -785,7 +558,7 @@ Procesos conson{'a}nticos y estructuras geom{'e}tricas en espa{~n}ol
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -795,7 +568,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-19
+11
 
 </td>
 
@@ -814,7 +587,7 @@ their monolingual peers
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -824,7 +597,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-20
+12
 
 </td>
 
@@ -852,7 +625,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-21
+13
 
 </td>
 
@@ -880,66 +653,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-22
-
-</td>
-
-<td style="text-align:left;">
-
-Watkins:2003cz
-
-</td>
-
-<td style="text-align:left;">
-
-Seeing and hearing speech excites the motor system involved in speech
-production
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-23
-
-</td>
-
-<td style="text-align:left;">
-
-freed2004context
-
-</td>
-
-<td style="text-align:left;">
-
-Context of learning and second language fluency in French: Comparing
-regular classroom, study abroad, and intensive domestic immersion
-programs
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-24
+14
 
 </td>
 
@@ -968,7 +682,7 @@ JOURNAL
 
 <td style="text-align:right;">
 
-25
+15
 
 </td>
 
@@ -987,7 +701,7 @@ vowels by native speakers of Brazilian Portuguese
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -997,7 +711,35 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-26
+16
+
+</td>
+
+<td style="text-align:left;">
+
+Leon:1903uv
+
+</td>
+
+<td style="text-align:left;">
+
+Los comanches y el dialecto Cahuillo de la baja California
+
+</td>
+
+<td style="text-align:left;">
+
+NUMBER
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+17
 
 </td>
 
@@ -1025,7 +767,7 @@ VOLUME, NUMBER
 
 <td style="text-align:right;">
 
-27
+18
 
 </td>
 
@@ -1044,7 +786,7 @@ second language acquisition
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -1054,36 +796,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-28
-
-</td>
-
-<td style="text-align:left;">
-
-Best:2001di
-
-</td>
-
-<td style="text-align:left;">
-
-Discrimination of non-native consonant contrasts varying in perceptual
-assimilation to the listener{}s native phonological system
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-29
+19
 
 </td>
 
@@ -1101,7 +814,7 @@ Coevolution of neocortex size, group size and language in humans
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -1111,64 +824,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-30
-
-</td>
-
-<td style="text-align:left;">
-
-Piske:2002fy
-
-</td>
-
-<td style="text-align:left;">
-
-The production of English vowels by fluent early and late
-Italian-English bilinguals
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-31
-
-</td>
-
-<td style="text-align:left;">
-
-Nooteboom:1980cd
-
-</td>
-
-<td style="text-align:left;">
-
-Production and perception of vowel length in spoken sentences
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-32
+20
 
 </td>
 
@@ -1187,7 +843,7 @@ memory in area Spt
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -1197,122 +853,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-33
-
-</td>
-
-<td style="text-align:left;">
-
-Rivera-Mills:2009ys
-
-</td>
-
-<td style="text-align:left;">
-
-Latinos or Hispanics? Changing demographics, implications, and continued
-diversity
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-34
-
-</td>
-
-<td style="text-align:left;">
-
-segalowitz2004context
-
-</td>
-
-<td style="text-align:left;">
-
-Context, contact, and cognition in oral fluency acquisition: Learning
-Spanish in at home and study abroad contexts
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-35
-
-</td>
-
-<td style="text-align:left;">
-
-MacKay:1987vk
-
-</td>
-
-<td style="text-align:left;">
-
-Asynlmetries in the Relationsh ip Between Speech Perception and
-Production
-
-</td>
-
-<td style="text-align:left;">
-
-VOLUME, PAGES, NUMBER, MONTH, JOURNAL
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-36
-
-</td>
-
-<td style="text-align:left;">
-
-Okane:1950p123
-
-</td>
-
-<td style="text-align:left;">
-
-On the Names of the Refr{'a}n
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-37
+21
 
 </td>
 
@@ -1330,7 +871,7 @@ Reorienting Language-as-Resource
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -1340,36 +881,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-38
-
-</td>
-
-<td style="text-align:left;">
-
-Flege1997
-
-</td>
-
-<td style="text-align:left;">
-
-Effects of experience on non-native speakers’ production and perception
-of English vowels
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-39
+22
 
 </td>
 
@@ -1387,7 +899,7 @@ Speech perception.
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -1397,36 +909,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-40
-
-</td>
-
-<td style="text-align:left;">
-
-Larsson:2008yq
-
-</td>
-
-<td style="text-align:left;">
-
-Lexical plasticity in early bilinguals does not alter phoneme
-categories: I. neurodynamical modeling
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-41
+23
 
 </td>
 
@@ -1454,7 +937,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-42
+24
 
 </td>
 
@@ -1473,7 +956,7 @@ Duration-based Perception is Not the Initial Developmental Stage
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -1483,36 +966,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-43
-
-</td>
-
-<td style="text-align:left;">
-
-Pallier:2001vx
-
-</td>
-
-<td style="text-align:left;">
-
-The influence of native-language phonology on lexical access:
-exemplar-Based versus abstract lexical entries.
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-44
+25
 
 </td>
 
@@ -1531,7 +985,7 @@ spontaneous speech.
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -1541,7 +995,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-45
+26
 
 </td>
 
@@ -1559,7 +1013,7 @@ El habla de Yucat{'a}m: Final \[m\] in a Dialect in Contact
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH, JOURNAL
+VOLUME, PAGES, NUMBER, JOURNAL
 
 </td>
 
@@ -1569,7 +1023,7 @@ VOLUME, PAGES, NUMBER, MONTH, JOURNAL
 
 <td style="text-align:right;">
 
-46
+27
 
 </td>
 
@@ -1587,7 +1041,7 @@ The voicing contrast in Fenno-Swedish stops
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -1597,35 +1051,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-47
-
-</td>
-
-<td style="text-align:left;">
-
-escudero2011perceptual
-
-</td>
-
-<td style="text-align:left;">
-
-Perceptual assimilation of Dutch vowels by Peruvian Spanish listeners
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-48
+28
 
 </td>
 
@@ -1653,7 +1079,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-49
+29
 
 </td>
 
@@ -1682,7 +1108,7 @@ NUMBER
 
 <td style="text-align:right;">
 
-50
+30
 
 </td>
 
@@ -1700,7 +1126,7 @@ Flexible cue use in nonnative phonetic categorization
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -1710,63 +1136,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-51
-
-</td>
-
-<td style="text-align:left;">
-
-pierrehumbert1989categories
-
-</td>
-
-<td style="text-align:left;">
-
-Categories of tonal alignment in English
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-52
-
-</td>
-
-<td style="text-align:left;">
-
-Ganong1980
-
-</td>
-
-<td style="text-align:left;">
-
-Phonetic categorization in auditory word perception.
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-53
+31
 
 </td>
 
@@ -1784,7 +1154,7 @@ AKUSTYK for Praat
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH, JOURNAL
+VOLUME, PAGES, NUMBER, JOURNAL
 
 </td>
 
@@ -1794,7 +1164,7 @@ VOLUME, PAGES, NUMBER, MONTH, JOURNAL
 
 <td style="text-align:right;">
 
-54
+32
 
 </td>
 
@@ -1822,7 +1192,7 @@ VOLUME, PAGES
 
 <td style="text-align:right;">
 
-55
+33
 
 </td>
 
@@ -1841,7 +1211,7 @@ and /l/ by Native Speakers of Japanese
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -1851,7 +1221,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-56
+34
 
 </td>
 
@@ -1870,7 +1240,7 @@ by learners at three proficiency levels
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH, JOURNAL
+VOLUME, PAGES, NUMBER, JOURNAL
 
 </td>
 
@@ -1880,7 +1250,7 @@ VOLUME, PAGES, NUMBER, MONTH, JOURNAL
 
 <td style="text-align:right;">
 
-57
+35
 
 </td>
 
@@ -1909,36 +1279,7 @@ VOLUME, NUMBER
 
 <td style="text-align:right;">
 
-58
-
-</td>
-
-<td style="text-align:left;">
-
-Bradlow1996
-
-</td>
-
-<td style="text-align:left;">
-
-A Perceptual Comparison of the /i/-/e/ and /u/-/o/ Contrasts in English
-and in Spanish: Universal and Language-Specific Aspects
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-59
+36
 
 </td>
 
@@ -1956,7 +1297,7 @@ A range effect in the perception of voicing
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -1966,7 +1307,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-60
+37
 
 </td>
 
@@ -1985,7 +1326,7 @@ Greek and English bilinguals and monolinguals
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -1995,7 +1336,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-61
+38
 
 </td>
 
@@ -2023,35 +1364,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-62
-
-</td>
-
-<td style="text-align:left;">
-
-Newman1997
-
-</td>
-
-<td style="text-align:left;">
-
-Lexical neighborhood effects in phonetic processing.
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-63
+39
 
 </td>
 
@@ -2079,36 +1392,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-64
-
-</td>
-
-<td style="text-align:left;">
-
-so2010cross
-
-</td>
-
-<td style="text-align:left;">
-
-Cross-language perception of non-native tonal contrasts: Effects of
-native phonological and phonetic influences
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-65
+40
 
 </td>
 
@@ -2127,7 +1411,7 @@ learning in native and non-native accents.
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -2137,7 +1421,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-66
+41
 
 </td>
 
@@ -2156,7 +1440,7 @@ consonants in French-English bilinguals
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -2166,36 +1450,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-67
-
-</td>
-
-<td style="text-align:left;">
-
-king1995did
-
-</td>
-
-<td style="text-align:left;">
-
-Who did what and when? Using word-and clause-level ERPs to monitor
-working memory usage in reading
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-68
+42
 
 </td>
 
@@ -2223,36 +1478,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-69
-
-</td>
-
-<td style="text-align:left;">
-
-escudero2012native
-
-</td>
-
-<td style="text-align:left;">
-
-Native dialect influences second-language vowel perception: Peruvian
-versus Iberian Spanish learners of Dutch
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-70
+43
 
 </td>
 
@@ -2280,7 +1506,7 @@ NUMBER
 
 <td style="text-align:right;">
 
-71
+44
 
 </td>
 
@@ -2308,36 +1534,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-72
-
-</td>
-
-<td style="text-align:left;">
-
-Strange:2011gi
-
-</td>
-
-<td style="text-align:left;">
-
-Automatic selective perception (ASP) of first and second language
-speech: A working model
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-73
+45
 
 </td>
 
@@ -2356,7 +1553,7 @@ Implications for Language Education: A Critical Assessment
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -2366,7 +1563,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-74
+46
 
 </td>
 
@@ -2394,35 +1591,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-75
-
-</td>
-
-<td style="text-align:left;">
-
-johnson2011infant
-
-</td>
-
-<td style="text-align:left;">
-
-Infant ability to tell voices apart rests on language experience
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-76
+47
 
 </td>
 
@@ -2441,7 +1610,7 @@ Estados Unidos
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -2451,64 +1620,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-77
-
-</td>
-
-<td style="text-align:left;">
-
-Johnson:1993im
-
-</td>
-
-<td style="text-align:left;">
-
-The Hyperspace Effect: Phonetic Targets Are Hyperarticulated
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-78
-
-</td>
-
-<td style="text-align:left;">
-
-sunderman2009study
-
-</td>
-
-<td style="text-align:left;">
-
-When study-abroad experience fails to deliver: The internal resources
-threshold effect
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-79
+48
 
 </td>
 
@@ -2527,7 +1639,7 @@ a comparison with previous studies
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -2537,36 +1649,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-80
-
-</td>
-
-<td style="text-align:left;">
-
-Pallier2003
-
-</td>
-
-<td style="text-align:left;">
-
-Brain imaging of language plasticity in adopted adults: can a second
-language replace the first?
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-81
+49
 
 </td>
 
@@ -2585,7 +1668,7 @@ Kinyarwanda
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -2595,64 +1678,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-82
-
-</td>
-
-<td style="text-align:left;">
-
-gilichinskaya2010perceptual
-
-</td>
-
-<td style="text-align:left;">
-
-Perceptual assimilation of American English vowels by inexperienced
-Russian listeners
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-83
-
-</td>
-
-<td style="text-align:left;">
-
-Best1993
-
-</td>
-
-<td style="text-align:left;">
-
-Learning to Perceive the Sound Pattern of English
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-84
+50
 
 </td>
 
@@ -2670,7 +1696,7 @@ Investigating Stylistic Variation
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -2680,36 +1706,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-85
-
-</td>
-
-<td style="text-align:left;">
-
-Harris:2001p434
-
-</td>
-
-<td style="text-align:left;">
-
-Wisdom of the People: Potential and Pitfalls in Efforts by the Comanches
-to Recreate Traditional Ways of Building Consensus
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-86
+51
 
 </td>
 
@@ -2737,7 +1734,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-87
+52
 
 </td>
 
@@ -2766,65 +1763,7 @@ NUMBER
 
 <td style="text-align:right;">
 
-88
-
-</td>
-
-<td style="text-align:left;">
-
-Mazzaro:2005wc
-
-</td>
-
-<td style="text-align:left;">
-
-Speaking Spanish with Style:(s) Deletion in Argentine Spanish and
-Labov{}s Decision Tree
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-89
-
-</td>
-
-<td style="text-align:left;">
-
-Anonymous:iwkObd-4
-
-</td>
-
-<td style="text-align:left;">
-
-The role of prosodic structure in the L2 acquisition of Spanish stop
-lenition
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-90
+53
 
 </td>
 
@@ -2842,7 +1781,7 @@ Hiatus resolution and incomplete identity
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -2852,7 +1791,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-91
+54
 
 </td>
 
@@ -2880,7 +1819,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-92
+55
 
 </td>
 
@@ -2908,7 +1847,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-93
+56
 
 </td>
 
@@ -2936,7 +1875,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-94
+57
 
 </td>
 
@@ -2964,122 +1903,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-95
-
-</td>
-
-<td style="text-align:left;">
-
-willis2005initial
-
-</td>
-
-<td style="text-align:left;">
-
-An initial examination of Southwest Spanish vowels
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-96
-
-</td>
-
-<td style="text-align:left;">
-
-JS1989
-
-</td>
-
-<td style="text-align:left;">
-
-Critical period effects in second language learning: the influence of
-maturational state on the acquisition of English as a second language.
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-97
-
-</td>
-
-<td style="text-align:left;">
-
-6653863720111001
-
-</td>
-
-<td style="text-align:left;">
-
-Dynamical account of how /b, d, g/ differ from /p, t, k/ in Spanish:
-Evidence from labials.
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-98
-
-</td>
-
-<td style="text-align:left;">
-
-Oh:2010hx
-
-</td>
-
-<td style="text-align:left;">
-
-Early childhood language memory in the speech perception of
-international adoptees
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-99
+58
 
 </td>
 
@@ -3097,7 +1921,7 @@ Static palatography for language fieldwork
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -3107,7 +1931,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-100
+59
 
 </td>
 
@@ -3135,36 +1959,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-101
-
-</td>
-
-<td style="text-align:left;">
-
-KrebsLazendic:2013ei
-
-</td>
-
-<td style="text-align:left;">
-
-First language suprasegmentally-conditioned syllable length distinctions
-influence perception and production of second language vowel contrasts
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-102
+60
 
 </td>
 
@@ -3182,7 +1977,7 @@ Optimal L2 syllables: Interaction of transfer and developmental effects
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -3192,35 +1987,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-103
-
-</td>
-
-<td style="text-align:left;">
-
-Flege1999a
-
-</td>
-
-<td style="text-align:left;">
-
-Native Italian speakers’ perception and production of English vowels.
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-104
+61
 
 </td>
 
@@ -3238,7 +2005,7 @@ Kreyol incursions into Dominican Spanish
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -3248,7 +2015,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-105
+62
 
 </td>
 
@@ -3276,35 +2043,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-106
-
-</td>
-
-<td style="text-align:left;">
-
-Alonso:1945vn
-
-</td>
-
-<td style="text-align:left;">
-
-Una ley fonol{'o}gica del espa{~n}ol
-
-</td>
-
-<td style="text-align:left;">
-
-VOLUME, PAGES, NUMBER, MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-107
+63
 
 </td>
 
@@ -3323,7 +2062,7 @@ autosegmental
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -3333,7 +2072,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-108
+64
 
 </td>
 
@@ -3361,37 +2100,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-109
-
-</td>
-
-<td style="text-align:left;">
-
-Chaiken1994
-
-</td>
-
-<td style="text-align:left;">
-
-Heuristic processing can bias systematic processing: Effects of source
-credibility, argument ambiguity, and task importance on attitude
-judgment.
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-110
+65
 
 </td>
 
@@ -3409,7 +2118,7 @@ La ‘ch’ fricativa en Granada: un sonido del habla masculina
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -3419,35 +2128,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-111
-
-</td>
-
-<td style="text-align:left;">
-
-Schwartz:1996iw
-
-</td>
-
-<td style="text-align:left;">
-
-L2 cognitive states and the Full Transfer/Full Access model
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-112
+66
 
 </td>
 
@@ -3475,7 +2156,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-113
+67
 
 </td>
 
@@ -3494,7 +2175,7 @@ Beginning College French. (Report no. FL013910)
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -3504,7 +2185,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-114
+68
 
 </td>
 
@@ -3522,7 +2203,7 @@ Source credibility and effective communication
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -3532,7 +2213,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-115
+69
 
 </td>
 
@@ -3550,7 +2231,7 @@ Quasi-neutralization of stress contrasts in Spanish
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -3560,7 +2241,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-116
+70
 
 </td>
 
@@ -3578,7 +2259,7 @@ Language contact in bilingualism: phonetic system interactions
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -3588,7 +2269,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-117
+71
 
 </td>
 
@@ -3607,7 +2288,7 @@ typology
 
 <td style="text-align:left;">
 
-PAGES, MONTH
+PAGES
 
 </td>
 
@@ -3617,7 +2298,7 @@ PAGES, MONTH
 
 <td style="text-align:right;">
 
-118
+72
 
 </td>
 
@@ -3645,36 +2326,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-119
-
-</td>
-
-<td style="text-align:left;">
-
-santa1999like
-
-</td>
-
-<td style="text-align:left;">
-
-Like an animal I was treated: Anti-immigrant metaphor in US public
-discourse
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-120
+73
 
 </td>
 
@@ -3692,7 +2344,7 @@ On the prosody of Orkney and Shetland dialects
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -3702,7 +2354,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-121
+74
 
 </td>
 
@@ -3731,7 +2383,7 @@ NUMBER
 
 <td style="text-align:right;">
 
-122
+75
 
 </td>
 
@@ -3749,7 +2401,7 @@ F0 timing in Kinyarwanda
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -3759,26 +2411,25 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-123
+76
 
 </td>
 
 <td style="text-align:left;">
 
-Muhlhausler:1992p128
+Shively:2008wa
 
 </td>
 
 <td style="text-align:left;">
 
-Preserving Languages or Language Ecologies? A Top-down Approach to
-Language Survival
+Development of Spanish requests and apologies during study abroad
 
 </td>
 
 <td style="text-align:left;">
 
-MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -3788,26 +2439,26 @@ MONTH
 
 <td style="text-align:right;">
 
-124
+77
 
 </td>
 
 <td style="text-align:left;">
 
-chen1970vowel
+LevAri:2014ii
 
 </td>
 
 <td style="text-align:left;">
 
-Vowel length variation as a function of the voicing of the consonant
-environment
+Comprehending non-native speakers: theory and evidence for adjustment in
+manner of processing.
 
 </td>
 
 <td style="text-align:left;">
 
-MONTH
+NUMBER
 
 </td>
 
@@ -3817,64 +2468,48 @@ MONTH
 
 <td style="text-align:right;">
 
-125
+78
 
 </td>
 
 <td style="text-align:left;">
 
-dupoux2008persistent
+face2003effects
 
 </td>
 
 <td style="text-align:left;">
 
-Persistent stress `deafness': The case of French learners of Spanish
-</td> <td style="text-align:left;"> MONTH </td> </tr> <tr> <td
-style="text-align:right;"> 126 </td> <td style="text-align:left;">
-Rungruang:2014un </td> <td style="text-align:left;"> The Relationship
-between the Perception and Production of English Coda Clusters by EFL
-Thai Learners </td> <td style="text-align:left;"> MONTH </td> </tr> <tr>
-<td style="text-align:right;"> 127 </td> <td style="text-align:left;">
-knouse2012acquisition </td> <td style="text-align:left;"> The
-Acquisition of Dialectal Phonemes in a Study Abroad Context: The Case of
-the Castilian Theta </td> <td style="text-align:left;"> MONTH </td>
-</tr> <tr> <td style="text-align:right;"> 128 </td> <td
-style="text-align:left;"> Shively:2008wa </td> <td
-style="text-align:left;"> Development of Spanish requests and apologies
-during study abroad </td> <td style="text-align:left;"> VOLUME, PAGES,
-NUMBER, MONTH </td> </tr> <tr> <td style="text-align:right;"> 129 </td>
-<td style="text-align:left;"> zampini1998relationship </td> <td
-style="text-align:left;"> The Relationship between the Production and
-Perception of L2 Spanish Stops </td> <td style="text-align:left;"> MONTH
-</td> </tr> <tr> <td style="text-align:right;"> 130 </td> <td
-style="text-align:left;"> Lappin:2000tc </td> <td
-style="text-align:left;"> The structure of unscientific revolutions
-</td> <td style="text-align:left;"> MONTH </td> </tr> <tr> <td
-style="text-align:right;"> 131 </td> <td style="text-align:left;">
-sebastian2012neuroanatomical </td> <td style="text-align:left;">
-Neuroanatomical markers of individual differences in native and
-non-native vowel perception </td> <td style="text-align:left;"> MONTH
-</td> </tr> <tr> <td style="text-align:right;"> 132 </td> <td
-style="text-align:left;"> Sternthal1978 </td> <td
-style="text-align:left;"> The Persuasive Effect of Source Credibility:
-Tests of Cognitive Response </td> <td style="text-align:left;"> MONTH
-</td> </tr> <tr> <td style="text-align:right;"> 133 </td> <td
-style="text-align:left;"> LevAri:2014ii </td> <td
-style="text-align:left;"> Comprehending non-native speakers: theory and
-evidence for adjustment in manner of processing. </td> <td
-style="text-align:left;"> NUMBER </td> </tr> <tr> <td
-style="text-align:right;"> 134 </td> <td style="text-align:left;">
-face2003effects </td> <td style="text-align:left;"> Effects of syntactic
-constituency on the intonational marking of Spanish contrastive focus
-</td> <td style="text-align:left;"> VOLUME, NUMBER, MONTH </td> </tr>
-<tr> <td style="text-align:right;"> 135 </td> <td
-style="text-align:left;"> Pisoni1974 </td> <td style="text-align:left;">
-Reaction times to comparisons within and across phonetic categories
-</td> <td style="text-align:left;"> MONTH </td> </tr> <tr> <td
-style="text-align:right;"> 136 </td> <td style="text-align:left;">
-Pallier:2012uy </td> <td style="text-align:left;"> TEX et BibTEX a` la
-puissance Emacs
+Effects of syntactic constituency on the intonational marking of Spanish
+contrastive focus
+
+</td>
+
+<td style="text-align:left;">
+
+VOLUME, NUMBER
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+79
+
+</td>
+
+<td style="text-align:left;">
+
+Pallier:2012uy
+
+</td>
+
+<td style="text-align:left;">
+
+TEX et BibTEX a\` la puissance Emacs
 
 </td>
 
@@ -3890,36 +2525,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-137
-
-</td>
-
-<td style="text-align:left;">
-
-ingvalson2012can
-
-</td>
-
-<td style="text-align:left;">
-
-Can native Japanese listeners learn to differentiate/r–l/on the basis of
-F3 onset frequency?
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-138
+80
 
 </td>
 
@@ -3937,7 +2543,7 @@ R: A Language and Environment for Statistical Computing
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH, JOURNAL
+VOLUME, PAGES, NUMBER, JOURNAL
 
 </td>
 
@@ -3947,121 +2553,7 @@ VOLUME, PAGES, NUMBER, MONTH, JOURNAL
 
 <td style="text-align:right;">
 
-139
-
-</td>
-
-<td style="text-align:left;">
-
-Bosch2003
-
-</td>
-
-<td style="text-align:left;">
-
-Simultaneous bilingualism and the perception of a language-specific
-vowel contrast in the first year of life
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-140
-
-</td>
-
-<td style="text-align:left;">
-
-Hillenbrand1995
-
-</td>
-
-<td style="text-align:left;">
-
-Acoustic characteristics of American English vowels
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-141
-
-</td>
-
-<td style="text-align:left;">
-
-escudero2011cross
-
-</td>
-
-<td style="text-align:left;">
-
-Cross-language acoustic similarity predicts perceptual assimilation of
-Canadian English and Canadian French vowels
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-142
-
-</td>
-
-<td style="text-align:left;">
-
-Samuel2009
-
-</td>
-
-<td style="text-align:left;">
-
-Perceptual learning for speech
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-143
+81
 
 </td>
 
@@ -4089,7 +2581,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-144
+82
 
 </td>
 
@@ -4117,7 +2609,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-145
+83
 
 </td>
 
@@ -4135,7 +2627,7 @@ Theory of mind and the evolution of language
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -4145,7 +2637,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-146
+84
 
 </td>
 
@@ -4163,7 +2655,7 @@ Perceptual Restoration of Missing Speech Sounds
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -4173,7 +2665,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-147
+85
 
 </td>
 
@@ -4201,92 +2693,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-148
-
-</td>
-
-<td style="text-align:left;">
-
-johnson2009voice
-
-</td>
-
-<td style="text-align:left;">
-
-Do voice recordings reveal whether a person is intoxicated? A case study
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-149
-
-</td>
-
-<td style="text-align:left;">
-
-broersma2008phantom
-
-</td>
-
-<td style="text-align:left;">
-
-Phantom word activation in L2
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-150
-
-</td>
-
-<td style="text-align:left;">
-
-Blasingame:2014gd
-
-</td>
-
-<td style="text-align:left;">
-
-Switched-dominance bilingual speech production: Continuous usage versus
-early exposure
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-151
+86
 
 </td>
 
@@ -4305,7 +2712,7 @@ applications
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -4315,7 +2722,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-152
+87
 
 </td>
 
@@ -4333,7 +2740,7 @@ Speech perception in phonology
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -4343,35 +2750,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-153
-
-</td>
-
-<td style="text-align:left;">
-
-DAusillo:2009du
-
-</td>
-
-<td style="text-align:left;">
-
-The Motor Somatotopy of Speech Perception
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-154
+88
 
 </td>
 
@@ -4390,7 +2769,7 @@ w/-/ v/ perception by native speakers of Hindi and English.
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -4400,7 +2779,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-155
+89
 
 </td>
 
@@ -4418,7 +2797,7 @@ The exponence of gender in Spanish
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -4428,7 +2807,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-156
+90
 
 </td>
 
@@ -4456,64 +2835,7 @@ VOLUME, NUMBER
 
 <td style="text-align:right;">
 
-157
-
-</td>
-
-<td style="text-align:left;">
-
-face2002local
-
-</td>
-
-<td style="text-align:left;">
-
-Local intonational marking of Spanish contrastive focus
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-158
-
-</td>
-
-<td style="text-align:left;">
-
-suarez2002paradox
-
-</td>
-
-<td style="text-align:left;">
-
-The paradox of linguistic hegemony and the maintenance of Spanish as a
-heritage language in the United States
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-159
+91
 
 </td>
 
@@ -4541,7 +2863,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-160
+92
 
 </td>
 
@@ -4559,7 +2881,7 @@ Sancho y la duquesa: Una nota socioliteraria
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -4569,7 +2891,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-161
+93
 
 </td>
 
@@ -4588,7 +2910,7 @@ and value for Spanish in Southwest Texas
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -4598,92 +2920,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-162
-
-</td>
-
-<td style="text-align:left;">
-
-Williams1974
-
-</td>
-
-<td style="text-align:left;">
-
-The Identification of Linguistic Attitudes
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-163
-
-</td>
-
-<td style="text-align:left;">
-
-Rizzolatti:2004by
-
-</td>
-
-<td style="text-align:left;">
-
-The mirror-neuron system
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-164
-
-</td>
-
-<td style="text-align:left;">
-
-Fowler:2008fk
-
-</td>
-
-<td style="text-align:left;">
-
-Cross language phonetic influences on the speech of French–English
-bilinguals
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-165
+94
 
 </td>
 
@@ -4701,7 +2938,7 @@ Relationship between perception and production in non-native speech
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -4711,7 +2948,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-166
+95
 
 </td>
 
@@ -4730,7 +2967,7 @@ Spanish Plural Formation
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -4740,7 +2977,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-167
+96
 
 </td>
 
@@ -4768,35 +3005,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-168
-
-</td>
-
-<td style="text-align:left;">
-
-2006PNAS..103.7865P
-
-</td>
-
-<td style="text-align:left;">
-
-Motor cortex maps articulatory features of speech sounds
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-169
+97
 
 </td>
 
@@ -4814,7 +3023,7 @@ Speech perception
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -4824,7 +3033,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-170
+98
 
 </td>
 
@@ -4842,7 +3051,7 @@ On the notion of focus in spoken Spanish: An empirical approach
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -4852,93 +3061,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-171
-
-</td>
-
-<td style="text-align:left;">
-
-wright2007heritage
-
-</td>
-
-<td style="text-align:left;">
-
-Heritage language programs in the era of English-only and No Child Left
-Behind
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-172
-
-</td>
-
-<td style="text-align:left;">
-
-Ionin:2008df
-
-</td>
-
-<td style="text-align:left;">
-
-Sources of linguistic knowledge in the second language acquisition of
-English articles
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-173
-
-</td>
-
-<td style="text-align:left;">
-
-johnson2004acoustic
-
-</td>
-
-<td style="text-align:left;">
-
-Acoustic and auditory phonetics
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-174
+99
 
 </td>
 
@@ -4956,7 +3079,7 @@ Compression effects in English
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -4966,7 +3089,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-175
+100
 
 </td>
 
@@ -4985,7 +3108,7 @@ neurons
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -4995,7 +3118,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-176
+101
 
 </td>
 
@@ -5014,7 +3137,7 @@ compensation for coarticulation
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -5024,7 +3147,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-177
+102
 
 </td>
 
@@ -5052,7 +3175,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-178
+103
 
 </td>
 
@@ -5080,36 +3203,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-179
-
-</td>
-
-<td style="text-align:left;">
-
-diaz2004context
-
-</td>
-
-<td style="text-align:left;">
-
-Context of learning in the acquisition of Spanish second language
-phonology
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-180
+104
 
 </td>
 
@@ -5127,7 +3221,7 @@ Acquisition of the Spanish voiced spirants by second language learners
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -5137,35 +3231,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-181
-
-</td>
-
-<td style="text-align:left;">
-
-Agheyisi1970a
-
-</td>
-
-<td style="text-align:left;">
-
-Language Attitude Studies: A Brief Survey of Methodological Approaches
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-182
+105
 
 </td>
 
@@ -5184,7 +3250,7 @@ speakers of Arabic, Japanese, and Persian
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -5194,35 +3260,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-183
-
-</td>
-
-<td style="text-align:left;">
-
-Holt2008
-
-</td>
-
-<td style="text-align:left;">
-
-Speech Perception Within an Auditory Cognitive Science Framework.
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-184
+106
 
 </td>
 
@@ -5241,7 +3279,7 @@ immersion: Issues and implications
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -5251,36 +3289,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-185
-
-</td>
-
-<td style="text-align:left;">
-
-Tsalikis1991
-
-</td>
-
-<td style="text-align:left;">
-
-The Role of Accent on the Credibility and Effectiveness of the
-Salesperson
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-186
+107
 
 </td>
 
@@ -5299,7 +3308,7 @@ Shetland dialects
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -5309,7 +3318,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-187
+108
 
 </td>
 
@@ -5337,35 +3346,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-188
-
-</td>
-
-<td style="text-align:left;">
-
-Peterson1952
-
-</td>
-
-<td style="text-align:left;">
-
-Control Methods Used in a Study of the Vowels
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH, JOURNAL
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-189
+109
 
 </td>
 
@@ -5393,35 +3374,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-190
-
-</td>
-
-<td style="text-align:left;">
-
-Osborn:1949vl
-
-</td>
-
-<td style="text-align:left;">
-
-Formulae for Comanche stem and word formation
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-191
+110
 
 </td>
 
@@ -5439,7 +3392,7 @@ Language learning and study abroad: A critical reading of research
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH, JOURNAL
+VOLUME, PAGES, NUMBER, JOURNAL
 
 </td>
 
@@ -5449,7 +3402,7 @@ VOLUME, PAGES, NUMBER, MONTH, JOURNAL
 
 <td style="text-align:right;">
 
-192
+111
 
 </td>
 
@@ -5469,7 +3422,7 @@ accurately
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -5479,7 +3432,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-193
+112
 
 </td>
 
@@ -5498,7 +3451,7 @@ direct-realist perspective
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -5508,7 +3461,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-194
+113
 
 </td>
 
@@ -5536,7 +3489,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-195
+114
 
 </td>
 
@@ -5554,7 +3507,7 @@ On the need for a separate perception grammar
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -5564,64 +3517,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-196
-
-</td>
-
-<td style="text-align:left;">
-
-Oh:vh
-
-</td>
-
-<td style="text-align:left;">
-
-Holding on to childhood language memory
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-197
-
-</td>
-
-<td style="text-align:left;">
-
-Tuinman:2011kx
-
-</td>
-
-<td style="text-align:left;">
-
-Perception of intrusive /r/ in English by native, cross-language and
-cross-dialect listeners
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-198
+115
 
 </td>
 
@@ -5649,7 +3545,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-199
+116
 
 </td>
 
@@ -5668,7 +3564,7 @@ acoustic evidence
 
 <td style="text-align:left;">
 
-VOLUME, MONTH
+VOLUME
 
 </td>
 
@@ -5678,36 +3574,7 @@ VOLUME, MONTH
 
 <td style="text-align:right;">
 
-200
-
-</td>
-
-<td style="text-align:left;">
-
-Pallier:2003gi
-
-</td>
-
-<td style="text-align:left;">
-
-Brain imaging of language plasticity in adopted adults: can a second
-language replace the first?
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-201
+117
 
 </td>
 
@@ -5726,7 +3593,7 @@ Spanish
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -5736,121 +3603,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-202
-
-</td>
-
-<td style="text-align:left;">
-
-Lantolf:1994ds
-
-</td>
-
-<td style="text-align:left;">
-
-Sociocultural Theory and Second Language Learning
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-203
-
-</td>
-
-<td style="text-align:left;">
-
-SebastianGalles:2005vo
-
-</td>
-
-<td style="text-align:left;">
-
-The influence of initial exposure on lexical representation: comparing
-early and simultaneous bilinguals
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-204
-
-</td>
-
-<td style="text-align:left;">
-
-grodner2005consequences
-
-</td>
-
-<td style="text-align:left;">
-
-Consequences of the serial nature of linguistic input for sentenial
-complexity
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-205
-
-</td>
-
-<td style="text-align:left;">
-
-Meister:2007jw
-
-</td>
-
-<td style="text-align:left;">
-
-The essential role of premotor cortex in speech perception
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-206
+118
 
 </td>
 
@@ -5868,7 +3621,7 @@ Research as Practice: Linking Theory, Method, and Data
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -5878,35 +3631,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-207
-
-</td>
-
-<td style="text-align:left;">
-
-Casagrande:1948vo
-
-</td>
-
-<td style="text-align:left;">
-
-Comanche baby language
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-208
+119
 
 </td>
 
@@ -5925,7 +3650,7 @@ Generalized Solution
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -5935,7 +3660,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-209
+120
 
 </td>
 
@@ -5964,7 +3689,7 @@ VOLUME, NUMBER
 
 <td style="text-align:right;">
 
-210
+121
 
 </td>
 
@@ -5982,7 +3707,7 @@ El refr{'a}n como texto oral y escrito
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -5992,7 +3717,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-211
+122
 
 </td>
 
@@ -6021,7 +3746,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-212
+123
 
 </td>
 
@@ -6039,7 +3764,7 @@ Does the United States need a language policy?
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -6049,7 +3774,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-213
+124
 
 </td>
 
@@ -6068,7 +3793,7 @@ Beginning College French.
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH, JOURNAL
+VOLUME, PAGES, NUMBER, JOURNAL
 
 </td>
 
@@ -6078,7 +3803,7 @@ VOLUME, PAGES, NUMBER, MONTH, JOURNAL
 
 <td style="text-align:right;">
 
-214
+125
 
 </td>
 
@@ -6106,36 +3831,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-215
-
-</td>
-
-<td style="text-align:left;">
-
-Flege1995
-
-</td>
-
-<td style="text-align:left;">
-
-Factors affecting strength of perceived foreign accent in a second
-language.
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-216
+126
 
 </td>
 
@@ -6153,7 +3849,7 @@ Native Language Constraints on L2 Perception
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH, JOURNAL
+VOLUME, PAGES, NUMBER, JOURNAL
 
 </td>
 
@@ -6163,35 +3859,7 @@ VOLUME, PAGES, NUMBER, MONTH, JOURNAL
 
 <td style="text-align:right;">
 
-217
-
-</td>
-
-<td style="text-align:left;">
-
-hidalgo1995language
-
-</td>
-
-<td style="text-align:left;">
-
-Language and ethnicity in the “taboo” region: The U.S.-Mexican border.
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-218
+127
 
 </td>
 
@@ -6210,7 +3878,7 @@ acquisition of /r/ and /l/
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -6220,120 +3888,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-219
-
-</td>
-
-<td style="text-align:left;">
-
-Jongman:2000gr
-
-</td>
-
-<td style="text-align:left;">
-
-Acoustic characteristics of English fricatives
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-220
-
-</td>
-
-<td style="text-align:left;">
-
-endress2010word
-
-</td>
-
-<td style="text-align:left;">
-
-Word segmentation with universal prosodic cues
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-221
-
-</td>
-
-<td style="text-align:left;">
-
-Liberman1967
-
-</td>
-
-<td style="text-align:left;">
-
-Perception of the speech code.
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-222
-
-</td>
-
-<td style="text-align:left;">
-
-simonet2010dark
-
-</td>
-
-<td style="text-align:left;">
-
-Dark and clear laterals in Catalan and Spanish: Interaction of phonetic
-categories in early bilinguals
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-223
+128
 
 </td>
 
@@ -6361,64 +3916,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-224
-
-</td>
-
-<td style="text-align:left;">
-
-Morrison2008
-
-</td>
-
-<td style="text-align:left;">
-
-Perception of Synthetic Vowels by Monolingual Canadian-English,
-Mexican-Spanish, and Peninsular-Spanish Listeners
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-225
-
-</td>
-
-<td style="text-align:left;">
-
-McCroskey1999
-
-</td>
-
-<td style="text-align:left;">
-
-Goodwill: A reexamination of the construct and its measurement
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-226
+129
 
 </td>
 
@@ -6436,7 +3934,7 @@ Does training in speech perception modify speech production?
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -6446,65 +3944,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-227
-
-</td>
-
-<td style="text-align:left;">
-
-Liberman:1954ft
-
-</td>
-
-<td style="text-align:left;">
-
-The role of consonant-vowel transitions in the perception of the stop
-and nasal consonants.
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-228
-
-</td>
-
-<td style="text-align:left;">
-
-Strange:2009lq
-
-</td>
-
-<td style="text-align:left;">
-
-Cross-language categorization of French and German vowels by na{"}ve
-American listeners
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-229
+130
 
 </td>
 
@@ -6522,7 +3962,7 @@ Word Order and Information Structure
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -6532,7 +3972,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-230
+131
 
 </td>
 
@@ -6560,94 +4000,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-231
-
-</td>
-
-<td style="text-align:left;">
-
-Kondaurova2008
-
-</td>
-
-<td style="text-align:left;">
-
-The relationship between native allophonic experience with vowel
-duration and perception of the English tense/lax vowel contrast by
-Spanish and Russian listeners
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-232
-
-</td>
-
-<td style="text-align:left;">
-
-anderson2005generation
-
-</td>
-
-<td style="text-align:left;">
-
-Generation and Spanish language use in the Lower Rio Grande Valley of
-Texas
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-233
-
-</td>
-
-<td style="text-align:left;">
-
-1989Sci…243..489L
-
-</td>
-
-<td style="text-align:left;">
-
-A Specialization for Speech-Perception
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-234
+132
 
 </td>
 
@@ -6675,7 +4028,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-235
+133
 
 </td>
 
@@ -6693,7 +4046,7 @@ Spanish in the Southwest
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -6703,7 +4056,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-236
+134
 
 </td>
 
@@ -6731,36 +4084,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-237
-
-</td>
-
-<td style="text-align:left;">
-
-ryan1992acquisition
-
-</td>
-
-<td style="text-align:left;">
-
-Acquisition of lexical meaning in a study abroad environment: Ser and
-estar and the Granada experience
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-238
+135
 
 </td>
 
@@ -6778,7 +4102,7 @@ Orientations in language planning
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -6788,7 +4112,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-239
+136
 
 </td>
 
@@ -6806,7 +4130,7 @@ Duration as a cue in the recognition of synthetic vowels
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -6816,7 +4140,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-240
+137
 
 </td>
 
@@ -6844,35 +4168,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-241
-
-</td>
-
-<td style="text-align:left;">
-
-Hosoda:2012jb
-
-</td>
-
-<td style="text-align:left;">
-
-The effect of Hispanic accents on employment decisions
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-242
+138
 
 </td>
 
@@ -6890,7 +4186,7 @@ The clausal architecture of Spanish: a comparative study
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -6900,7 +4196,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-243
+139
 
 </td>
 
@@ -6918,7 +4214,7 @@ Phonology-semantics interaction in OT, and its acquisition
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -6928,7 +4224,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-244
+140
 
 </td>
 
@@ -6956,7 +4252,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-245
+141
 
 </td>
 
@@ -6985,7 +4281,7 @@ VOLUME, NUMBER
 
 <td style="text-align:right;">
 
-246
+142
 
 </td>
 
@@ -7003,7 +4299,7 @@ Syllable structure and stress in Spanish: a nonlinear analysis
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH, JOURNAL
+VOLUME, PAGES, NUMBER, JOURNAL
 
 </td>
 
@@ -7013,7 +4309,7 @@ VOLUME, PAGES, NUMBER, MONTH, JOURNAL
 
 <td style="text-align:right;">
 
-247
+143
 
 </td>
 
@@ -7041,7 +4337,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-248
+144
 
 </td>
 
@@ -7060,7 +4356,7 @@ listeners: Longitudinal development in the classroom context
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -7070,7 +4366,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-249
+145
 
 </td>
 
@@ -7099,7 +4395,7 @@ VOLUME, PAGES
 
 <td style="text-align:right;">
 
-250
+146
 
 </td>
 
@@ -7127,7 +4423,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-251
+147
 
 </td>
 
@@ -7156,7 +4452,7 @@ VOLUME, PAGES, NUMBER
 
 <td style="text-align:right;">
 
-252
+148
 
 </td>
 
@@ -7176,7 +4472,7 @@ categories
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -7186,7 +4482,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-253
+149
 
 </td>
 
@@ -7205,7 +4501,7 @@ account
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -7215,7 +4511,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-254
+150
 
 </td>
 
@@ -7233,7 +4529,7 @@ Native and Non-Native Speech Perception
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -7243,7 +4539,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-255
+151
 
 </td>
 
@@ -7272,36 +4568,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-256
-
-</td>
-
-<td style="text-align:left;">
-
-escudero2011enhanced
-
-</td>
-
-<td style="text-align:left;">
-
-Enhanced bimodal distributions facilitate the learning of second
-language vowels
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-257
+152
 
 </td>
 
@@ -7319,7 +4586,7 @@ Diminutives and augmentatives in Mexican Spanish: a prosodic analysis
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -7329,35 +4596,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-258
-
-</td>
-
-<td style="text-align:left;">
-
-colome2010language
-
-</td>
-
-<td style="text-align:left;">
-
-Language effects in addition: How you say it counts
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-259
+153
 
 </td>
 
@@ -7385,35 +4624,7 @@ NUMBER
 
 <td style="text-align:right;">
 
-260
-
-</td>
-
-<td style="text-align:left;">
-
-Anonymous:tLFHwYTL
-
-</td>
-
-<td style="text-align:left;">
-
-The split-apply-combine strategy for data analysis
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-261
+154
 
 </td>
 
@@ -7432,7 +4643,7 @@ English {}short{} front vowel shift
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -7442,92 +4653,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-262
-
-</td>
-
-<td style="text-align:left;">
-
-marques2011study
-
-</td>
-
-<td style="text-align:left;">
-
-Study Abroad, Previous Language Experience, and Spanish L2 Development
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-263
-
-</td>
-
-<td style="text-align:left;">
-
-Ramon-Casas2009
-
-</td>
-
-<td style="text-align:left;">
-
-Vowel categorization during word recognition in bilingual toddlers.
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-264
-
-</td>
-
-<td style="text-align:left;">
-
-Tsurutani:2012jb
-
-</td>
-
-<td style="text-align:left;">
-
-Evaluation of speakers with foreign-accented speech in Japan: the effect
-of accent produced by English native speakers
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-265
+155
 
 </td>
 
@@ -7555,36 +4681,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-266
-
-</td>
-
-<td style="text-align:left;">
-
-Lord:2000vb
-
-</td>
-
-<td style="text-align:left;">
-
-The Combined Effects of Immersion and Instruction on Second Language
-Pronunciation
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-267
+156
 
 </td>
 
@@ -7603,7 +4700,7 @@ atlantic salmon: an argument for proper multiple comparisons correction
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -7613,7 +4710,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-268
+157
 
 </td>
 
@@ -7631,7 +4728,7 @@ How /b, d, g/ differ from /p, t, k/ in Spanish: A dynamic account
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -7641,36 +4738,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-269
-
-</td>
-
-<td style="text-align:left;">
-
-Kuhl:1986tk
-
-</td>
-
-<td style="text-align:left;">
-
-Theoretical Contributions of Tests on Animals to the Special-Mechanisms
-Debate in Speech
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-270
+158
 
 </td>
 
@@ -7698,36 +4766,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-271
-
-</td>
-
-<td style="text-align:left;">
-
-Morrison:2008vn
-
-</td>
-
-<td style="text-align:left;">
-
-L1-Spanish speakers’ acquisition of the english /i/-/I/ contrast:
-duration-based perception is not the initial developmental stage
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-272
+159
 
 </td>
 
@@ -7755,7 +4794,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-273
+160
 
 </td>
 
@@ -7774,7 +4813,7 @@ Spanish learners of English
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -7784,35 +4823,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-274
-
-</td>
-
-<td style="text-align:left;">
-
-Bradlow:1995wn
-
-</td>
-
-<td style="text-align:left;">
-
-A comparative acoustic study of english and spanish vowels
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-275
+161
 
 </td>
 
@@ -7831,7 +4842,7 @@ merger-in-progress
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -7841,7 +4852,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-276
+162
 
 </td>
 
@@ -7870,7 +4881,7 @@ NUMBER
 
 <td style="text-align:right;">
 
-277
+163
 
 </td>
 
@@ -7888,7 +4899,7 @@ An auditory-motor theory of speech production
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -7898,7 +4909,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-278
+164
 
 </td>
 
@@ -7926,7 +4937,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-279
+165
 
 </td>
 
@@ -7954,7 +4965,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-280
+166
 
 </td>
 
@@ -7972,7 +4983,7 @@ How to avoid seven deadly sins in the study of behavior
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -7982,35 +4993,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-281
-
-</td>
-
-<td style="text-align:left;">
-
-sebastian2012bilingual
-
-</td>
-
-<td style="text-align:left;">
-
-A bilingual advantage in visual language discrimination in infancy
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-282
+167
 
 </td>
 
@@ -8038,35 +5021,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-283
-
-</td>
-
-<td style="text-align:left;">
-
-Kuhl2008
-
-</td>
-
-<td style="text-align:left;">
-
-Neural Substrates of Language Acquisition
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-284
+168
 
 </td>
 
@@ -8084,7 +5039,7 @@ Music, mind and evolution
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -8094,7 +5049,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-285
+169
 
 </td>
 
@@ -8122,37 +5077,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-286
-
-</td>
-
-<td style="text-align:left;">
-
-del2011conflict
-
-</td>
-
-<td style="text-align:left;">
-
-Conflict and cognitive control during sentence comprehension:
-Recruitment of a frontal network during the processing of Spanish
-object-first sentences
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-287
+170
 
 </td>
 
@@ -8171,7 +5096,7 @@ second language
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -8181,63 +5106,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-288
-
-</td>
-
-<td style="text-align:left;">
-
-RalloFabra:2012dc
-
-</td>
-
-<td style="text-align:left;">
-
-Native Catalan learners’ perception and production of English vowels
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-289
-
-</td>
-
-<td style="text-align:left;">
-
-costa2008bilingualism
-
-</td>
-
-<td style="text-align:left;">
-
-Bilingualism aids conflict resolution: Evidence from the ANT task
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-290
+171
 
 </td>
 
@@ -8265,7 +5134,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-291
+172
 
 </td>
 
@@ -8283,7 +5152,7 @@ Lexical tone and stress in Goizueta Basque
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -8293,7 +5162,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-292
+173
 
 </td>
 
@@ -8312,7 +5181,7 @@ study abroad setting
 
 <td style="text-align:left;">
 
-MONTH, JOURNAL
+JOURNAL
 
 </td>
 
@@ -8322,36 +5191,7 @@ MONTH, JOURNAL
 
 <td style="text-align:right;">
 
-293
-
-</td>
-
-<td style="text-align:left;">
-
-McMurray2008
-
-</td>
-
-<td style="text-align:left;">
-
-Gradient sensitivity to within-category variation in words and
-syllables.
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-294
+174
 
 </td>
 
@@ -8370,7 +5210,7 @@ So Critical Approach
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -8380,7 +5220,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-295
+175
 
 </td>
 
@@ -8408,7 +5248,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-296
+176
 
 </td>
 
@@ -8427,7 +5267,7 @@ Learning Contexts: Study Abroad and the Domestic Classroom.
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -8437,7 +5277,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-297
+177
 
 </td>
 
@@ -8465,35 +5305,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-298
-
-</td>
-
-<td style="text-align:left;">
-
-Menezes:2013bi
-
-</td>
-
-<td style="text-align:left;">
-
-Second Language Acquisition: Reconciling Theories
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-299
+178
 
 </td>
 
@@ -8512,7 +5324,7 @@ production in the acquisition of English stress
 
 <td style="text-align:left;">
 
-PAGES, NUMBER, MONTH
+PAGES, NUMBER
 
 </td>
 
@@ -8522,7 +5334,7 @@ PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-300
+179
 
 </td>
 
@@ -8550,36 +5362,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-301
-
-</td>
-
-<td style="text-align:left;">
-
-DeShieldsJr2011
-
-</td>
-
-<td style="text-align:left;">
-
-The varying influence of spokesperson’s accent in communication
-effectiveness: A comparative study in two different regions of Mexico
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-302
+180
 
 </td>
 
@@ -8607,7 +5390,7 @@ VOLUME, NUMBER
 
 <td style="text-align:right;">
 
-303
+181
 
 </td>
 
@@ -8626,7 +5409,7 @@ Mandarin
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -8636,7 +5419,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-304
+182
 
 </td>
 
@@ -8654,7 +5437,7 @@ Rate effects on Swedish VOT: Evidence for phonological overspecification
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -8664,7 +5447,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-305
+183
 
 </td>
 
@@ -8682,7 +5465,7 @@ Pseudoreplication in phonetic research
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH, JOURNAL
+VOLUME, NUMBER, JOURNAL
 
 </td>
 
@@ -8692,7 +5475,7 @@ VOLUME, NUMBER, MONTH, JOURNAL
 
 <td style="text-align:right;">
 
-306
+184
 
 </td>
 
@@ -8711,7 +5494,7 @@ second language learners of English
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -8721,7 +5504,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-307
+185
 
 </td>
 
@@ -8749,63 +5532,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-308
-
-</td>
-
-<td style="text-align:left;">
-
-Herrick:2011bp
-
-</td>
-
-<td style="text-align:left;">
-
-On Comanche’s Central Mid Vowel
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-309
-
-</td>
-
-<td style="text-align:left;">
-
-Knightly:2003ky
-
-</td>
-
-<td style="text-align:left;">
-
-Production benefits of childhood overhearing
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-310
+186
 
 </td>
 
@@ -8833,92 +5560,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-311
-
-</td>
-
-<td style="text-align:left;">
-
-Patzer1983
-
-</td>
-
-<td style="text-align:left;">
-
-Source credibility as a function of communicator physical attractiveness
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-312
-
-</td>
-
-<td style="text-align:left;">
-
-Hernandez:2008uq
-
-</td>
-
-<td style="text-align:left;">
-
-Grammatical category-specific deficits in bilingual aphasia
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-313
-
-</td>
-
-<td style="text-align:left;">
-
-Wanrooij:2013cd
-
-</td>
-
-<td style="text-align:left;">
-
-What do listeners learn from exposure to a vowel distribution? An
-analysis of listening strategies in distributional learning
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-314
+187
 
 </td>
 
@@ -8946,36 +5588,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-315
-
-</td>
-
-<td style="text-align:left;">
-
-Flege1991
-
-</td>
-
-<td style="text-align:left;">
-
-The interlingual identification of Spanish and English vowels:
-orthographic evidence.
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-316
+188
 
 </td>
 
@@ -8994,7 +5607,7 @@ and German Erasmus Students
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH, JOURNAL
+VOLUME, PAGES, NUMBER, JOURNAL
 
 </td>
 
@@ -9004,7 +5617,7 @@ VOLUME, PAGES, NUMBER, MONTH, JOURNAL
 
 <td style="text-align:right;">
 
-317
+189
 
 </td>
 
@@ -9022,7 +5635,7 @@ Categorical perception: Issues, methods, findings
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -9032,7 +5645,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-318
+190
 
 </td>
 
@@ -9060,7 +5673,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-319
+191
 
 </td>
 
@@ -9088,36 +5701,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-320
-
-</td>
-
-<td style="text-align:left;">
-
-oh2010early
-
-</td>
-
-<td style="text-align:left;">
-
-Early childhood language memory in the speech perception of
-international adoptees\*
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-321
+192
 
 </td>
 
@@ -9136,7 +5720,7 @@ of voice onset time in English and Spanish
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -9146,36 +5730,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-322
-
-</td>
-
-<td style="text-align:left;">
-
-lipski2012language
-
-</td>
-
-<td style="text-align:left;">
-
-Language experience modulates weighting of acoustic cues for vowel
-perception: An event-related potential study
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-323
+193
 
 </td>
 
@@ -9193,7 +5748,7 @@ The role of the linguistic environment in second language acquisition
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -9203,7 +5758,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-324
+194
 
 </td>
 
@@ -9222,7 +5777,7 @@ networks of attention
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -9232,35 +5787,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-325
-
-</td>
-
-<td style="text-align:left;">
-
-just1996brain
-
-</td>
-
-<td style="text-align:left;">
-
-Brain activation modulated by sentence comprehension
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-326
+195
 
 </td>
 
@@ -9278,7 +5805,7 @@ Synchronous chorusing and human origins
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -9288,64 +5815,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-327
-
-</td>
-
-<td style="text-align:left;">
-
-strange2011cross
-
-</td>
-
-<td style="text-align:left;">
-
-Cross-language perceptual similarity predicts categorial discrimination
-of American vowels by na{"}ve Japanese listeners
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-328
-
-</td>
-
-<td style="text-align:left;">
-
-Polka:1994ig
-
-</td>
-
-<td style="text-align:left;">
-
-Developmental changes in perception of nonnative vowel contrasts
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-329
+196
 
 </td>
 
@@ -9363,7 +5833,7 @@ With respect to metrical constituents in Spanish
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -9373,7 +5843,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-330
+197
 
 </td>
 
@@ -9402,35 +5872,7 @@ NUMBER
 
 <td style="text-align:right;">
 
-331
-
-</td>
-
-<td style="text-align:left;">
-
-Moore:1958p124
-
-</td>
-
-<td style="text-align:left;">
-
-The Idealism of Sancho Panza
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-332
+198
 
 </td>
 
@@ -9449,7 +5891,7 @@ speech rate effects on peak timing in Spanish
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -9459,7 +5901,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-333
+199
 
 </td>
 
@@ -9478,7 +5920,7 @@ acoustic-phonetic context for Spanish learners of English
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -9488,36 +5930,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-334
-
-</td>
-
-<td style="text-align:left;">
-
-Yeni-Komshian2000
-
-</td>
-
-<td style="text-align:left;">
-
-Pronunciation Proficiency in the First and Second Languages of
-Korean-English Bilinguals.
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-335
+200
 
 </td>
 
@@ -9545,7 +5958,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-336
+201
 
 </td>
 
@@ -9575,65 +5988,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-337
-
-</td>
-
-<td style="text-align:left;">
-
-escudero2010spanish
-
-</td>
-
-<td style="text-align:left;">
-
-Spanish listeners perception of American and Southern British English
-vowels
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-338
-
-</td>
-
-<td style="text-align:left;">
-
-Ohanian1990
-
-</td>
-
-<td style="text-align:left;">
-
-Construction and Validation of a Scale to Measure Celebrity Endorsers’
-Perceived Expertise, Trustworthiness, and Attractiveness
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-339
+202
 
 </td>
 
@@ -9661,65 +6016,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-340
-
-</td>
-
-<td style="text-align:left;">
-
-diaz2008brain
-
-</td>
-
-<td style="text-align:left;">
-
-Brain potentials to native phoneme discrimination reveal the origin of
-individual differences in learning the sounds of a second language
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-341
-
-</td>
-
-<td style="text-align:left;">
-
-YeniKomshian:2000ve
-
-</td>
-
-<td style="text-align:left;">
-
-Pronunciation proficiency in the first and second languages of
-Korean-English bilinguals
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-342
+203
 
 </td>
 
@@ -9747,7 +6044,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-343
+204
 
 </td>
 
@@ -9766,7 +6063,7 @@ English and Canadian French
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -9776,180 +6073,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-344
-
-</td>
-
-<td style="text-align:left;">
-
-morrison2009l1
-
-</td>
-
-<td style="text-align:left;">
-
-L1-Spanish speakers’ acquisition of the English /i/-/I/ contrast ii:
-perception of vowel inherent spectral change
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-345
-
-</td>
-
-<td style="text-align:left;">
-
-Kuhl:2006gn
-
-</td>
-
-<td style="text-align:left;">
-
-Infants show a facilitation effect for native language phonetic
-perception between 6 and 12 months
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-346
-
-</td>
-
-<td style="text-align:left;">
-
-cubillos2008impact
-
-</td>
-
-<td style="text-align:left;">
-
-The impact of short-term study abroad programs on L2 listening
-comprehension skills
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-347
-
-</td>
-
-<td style="text-align:left;">
-
-Moyna:2005fr
-
-</td>
-
-<td style="text-align:left;">
-
-A historical perspective on Spanish in the California Borderlands
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-348
-
-</td>
-
-<td style="text-align:left;">
-
-poarch2012cross
-
-</td>
-
-<td style="text-align:left;">
-
-Cross-language activation in children’s speech production: Evidence from
-second language learners, bilinguals, and trilinguals
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-349
-
-</td>
-
-<td style="text-align:left;">
-
-howard2001effects
-
-</td>
-
-<td style="text-align:left;">
-
-The effects of study abroad on the L2 learners structural skills:
-Evidence from advanced learners of French
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-350
+205
 
 </td>
 
@@ -9977,123 +6101,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-351
-
-</td>
-
-<td style="text-align:left;">
-
-Hidalgo1986a
-
-</td>
-
-<td style="text-align:left;">
-
-Language Contact, Language Loyalty, and Language Prejudice on the
-Mexican Border
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-352
-
-</td>
-
-<td style="text-align:left;">
-
-baker2008child
-
-</td>
-
-<td style="text-align:left;">
-
-Child—Adult Differences in Second-Language Phonological Learning: The
-Role of Cross-Language Similarity
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-353
-
-</td>
-
-<td style="text-align:left;">
-
-bylund2012does
-
-</td>
-
-<td style="text-align:left;">
-
-Does First Language Maintenance Hamper Nativelikeness in a Second
-Language?
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-354
-
-</td>
-
-<td style="text-align:left;">
-
-Hayes-Harb:2008qy
-
-</td>
-
-<td style="text-align:left;">
-
-Development of the ability to lexically encode novel second language
-phonemic contrasts
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-355
+206
 
 </td>
 
@@ -10123,7 +6131,7 @@ VOLUME, PAGES, NUMBER
 
 <td style="text-align:right;">
 
-356
+207
 
 </td>
 
@@ -10151,35 +6159,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-357
-
-</td>
-
-<td style="text-align:left;">
-
-Freed:2004bq
-
-</td>
-
-<td style="text-align:left;">
-
-Learning Context and Its Effects on Second Language Acquisition
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-358
+208
 
 </td>
 
@@ -10197,7 +6177,7 @@ Some effects of context on Voice Onset Time in English stops
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -10207,7 +6187,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-359
+209
 
 </td>
 
@@ -10225,7 +6205,7 @@ Lenition and Phonemic Overlap in Rome Italian
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -10235,36 +6215,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-360
-
-</td>
-
-<td style="text-align:left;">
-
-liu:EL427
-
-</td>
-
-<td style="text-align:left;">
-
-Categorical perception of intonation contrasts: Effects of listeners’
-language background
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-361
+210
 
 </td>
 
@@ -10292,7 +6243,7 @@ VOLUME, NUMBER
 
 <td style="text-align:right;">
 
-362
+211
 
 </td>
 
@@ -10310,7 +6261,7 @@ Silabeo y estructura morf{'e}mica en espa{~n}ol
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -10320,7 +6271,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-363
+212
 
 </td>
 
@@ -10348,7 +6299,7 @@ VOLUME, PAGES, NUMBER
 
 <td style="text-align:right;">
 
-364
+213
 
 </td>
 
@@ -10367,7 +6318,7 @@ statistical modeling approach
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -10377,36 +6328,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-365
-
-</td>
-
-<td style="text-align:left;">
-
-iverson2011cross
-
-</td>
-
-<td style="text-align:left;">
-
-Cross-language specialization in phonetic processing: English and Hindi
-perception of/w/-/v/speech and nonspeech
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-366
+214
 
 </td>
 
@@ -10425,7 +6347,7 @@ bilingualism
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -10435,7 +6357,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-367
+215
 
 </td>
 
@@ -10454,7 +6376,7 @@ abroad contexts
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH, JOURNAL
+VOLUME, PAGES, NUMBER, JOURNAL
 
 </td>
 
@@ -10464,7 +6386,7 @@ VOLUME, PAGES, NUMBER, MONTH, JOURNAL
 
 <td style="text-align:right;">
 
-368
+216
 
 </td>
 
@@ -10492,36 +6414,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-369
-
-</td>
-
-<td style="text-align:left;">
-
-Sheldon:1985kd
-
-</td>
-
-<td style="text-align:left;">
-
-THE RELATIONSHIP BETWEEN PRODUCTION AND PERCEPTION OF THE/r/-/I/CONTRAST
-IN KOREAN ADULTS LEARNING ENGLISH: A REPLY TO BORDEN, {}
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-370
+217
 
 </td>
 
@@ -10539,7 +6432,7 @@ Reaction time and decision difficulty in the perception of intonation
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -10549,7 +6442,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-371
+218
 
 </td>
 
@@ -10577,35 +6470,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-372
-
-</td>
-
-<td style="text-align:left;">
-
-recasens2012cross
-
-</td>
-
-<td style="text-align:left;">
-
-A cross-language acoustic study of initial and final allophones of /l/
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-373
+219
 
 </td>
 
@@ -10623,7 +6488,7 @@ The relation of speech perception and speech production
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -10633,7 +6498,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-374
+220
 
 </td>
 
@@ -10651,7 +6516,7 @@ Emacs and R Integration via ESS: Installation How-To
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH, JOURNAL
+VOLUME, NUMBER, JOURNAL
 
 </td>
 
@@ -10661,36 +6526,7 @@ VOLUME, NUMBER, MONTH, JOURNAL
 
 <td style="text-align:right;">
 
-375
-
-</td>
-
-<td style="text-align:left;">
-
-Oyama1976
-
-</td>
-
-<td style="text-align:left;">
-
-A sensitive period for the acquisition of a nonnative phonological
-system
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-376
+221
 
 </td>
 
@@ -10708,7 +6544,7 @@ Cross-language differences in cue use for speech segmentation
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -10718,7 +6554,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-377
+222
 
 </td>
 
@@ -10746,124 +6582,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-378
-
-</td>
-
-<td style="text-align:left;">
-
-Brouwer:2012cm
-
-</td>
-
-<td style="text-align:left;">
-
-Linguistic contributions to speech-on-speech masking for native and
-non-native listeners: Language familiarity and semantic content
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-379
-
-</td>
-
-<td style="text-align:left;">
-
-Carifio:2007hg
-
-</td>
-
-<td style="text-align:left;">
-
-Ten Common Misunderstandings, Misconceptions, Persistent Myths and Urban
-Legends about Likert Scales and Likert Response Formats and their
-Antidotes
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-380
-
-</td>
-
-<td style="text-align:left;">
-
-bundgaard2012second
-
-</td>
-
-<td style="text-align:left;">
-
-Second language learners vocabulary expansion is associated with
-improved second language vowel intelligibility
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-381
-
-</td>
-
-<td style="text-align:left;">
-
-Lafford:2004dz
-
-</td>
-
-<td style="text-align:left;">
-
-The Effect of the Context of Learning on the Use of Communication
-Strategies by Learners of Spanish as a Second Language
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-382
+223
 
 </td>
 
@@ -10881,7 +6600,7 @@ Teaching Intervention on the Pronunciation of Spanish Intervocalic /d/
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH, JOURNAL
+VOLUME, PAGES, NUMBER, JOURNAL
 
 </td>
 
@@ -10891,7 +6610,7 @@ VOLUME, PAGES, NUMBER, MONTH, JOURNAL
 
 <td style="text-align:right;">
 
-383
+224
 
 </td>
 
@@ -10919,7 +6638,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-384
+225
 
 </td>
 
@@ -10947,7 +6666,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-385
+226
 
 </td>
 
@@ -10975,36 +6694,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-386
-
-</td>
-
-<td style="text-align:left;">
-
-best2010perception
-
-</td>
-
-<td style="text-align:left;">
-
-Perception of initial obstruent voicing is influenced by gestural
-organization
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-387
+227
 
 </td>
 
@@ -11022,7 +6712,7 @@ Multilingual sound perception and word recognition
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -11032,7 +6722,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-388
+228
 
 </td>
 
@@ -11060,7 +6750,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-389
+229
 
 </td>
 
@@ -11088,36 +6778,7 @@ VOLUME, NUMBER
 
 <td style="text-align:right;">
 
-390
-
-</td>
-
-<td style="text-align:left;">
-
-oh2011one
-
-</td>
-
-<td style="text-align:left;">
-
-A one-year longitudinal study of English and Japanese vowel production
-by Japanese adults and children in an English-speaking setting
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-391
+230
 
 </td>
 
@@ -11145,7 +6806,7 @@ JOURNAL
 
 <td style="text-align:right;">
 
-392
+231
 
 </td>
 
@@ -11174,7 +6835,7 @@ VOLUME, NUMBER
 
 <td style="text-align:right;">
 
-393
+232
 
 </td>
 
@@ -11192,7 +6853,7 @@ Spanish /i/ and related sounds: An exercise in phonemic analysis
 
 <td style="text-align:left;">
 
-PAGES, MONTH
+PAGES
 
 </td>
 
@@ -11202,65 +6863,7 @@ PAGES, MONTH
 
 <td style="text-align:right;">
 
-394
-
-</td>
-
-<td style="text-align:left;">
-
-WERKER1984
-
-</td>
-
-<td style="text-align:left;">
-
-Cross-language speech perception: evidence for perceptual reorganization
-during the first year of life
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-395
-
-</td>
-
-<td style="text-align:left;">
-
-Anonymous:UHdLv225
-
-</td>
-
-<td style="text-align:left;">
-
-The legal framework for reproducible scientific research: Licensing and
-copyright
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-396
+233
 
 </td>
 
@@ -11279,7 +6882,7 @@ by listeners with normal hearing
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -11289,7 +6892,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-397
+234
 
 </td>
 
@@ -11317,36 +6920,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-398
-
-</td>
-
-<td style="text-align:left;">
-
-BardoviHarlig:2011wp
-
-</td>
-
-<td style="text-align:left;">
-
-Proficiency, length of stay, and intensity of interaction and the
-acquisition of conventional expressions in L2 pragmatics
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-399
+235
 
 </td>
 
@@ -11374,7 +6948,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-400
+236
 
 </td>
 
@@ -11403,36 +6977,7 @@ NUMBER
 
 <td style="text-align:right;">
 
-401
-
-</td>
-
-<td style="text-align:left;">
-
-Sebastian-Galls2006
-
-</td>
-
-<td style="text-align:left;">
-
-First- and Second-language Phonological Representations in the Mental
-Lexicon
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-402
+237
 
 </td>
 
@@ -11451,7 +6996,7 @@ mixed-effects models
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -11461,7 +7006,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-403
+238
 
 </td>
 
@@ -11479,7 +7024,7 @@ Praat: doing phonetics by computer
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH, JOURNAL
+VOLUME, PAGES, NUMBER, JOURNAL
 
 </td>
 
@@ -11489,7 +7034,7 @@ VOLUME, PAGES, NUMBER, MONTH, JOURNAL
 
 <td style="text-align:right;">
 
-404
+239
 
 </td>
 
@@ -11508,7 +7053,7 @@ de actitudes ling{"u}{'}sticas
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -11518,36 +7063,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-405
-
-</td>
-
-<td style="text-align:left;">
-
-Samuel2001
-
-</td>
-
-<td style="text-align:left;">
-
-Knowing a word affects the fundamental perception of the sounds within
-it.
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-406
+240
 
 </td>
 
@@ -11575,36 +7091,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-407
-
-</td>
-
-<td style="text-align:left;">
-
-Fridland:2012df
-
-</td>
-
-<td style="text-align:left;">
-
-Exploring the relationship between production and perception in the mid
-front vowels of U.S. English
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-408
+241
 
 </td>
 
@@ -11623,7 +7110,7 @@ dissimilarity test
 
 <td style="text-align:left;">
 
-VOLUME, MONTH
+VOLUME
 
 </td>
 
@@ -11633,7 +7120,7 @@ VOLUME, MONTH
 
 <td style="text-align:right;">
 
-409
+242
 
 </td>
 
@@ -11653,7 +7140,7 @@ Spanish speakers
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -11663,7 +7150,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-410
+243
 
 </td>
 
@@ -11682,7 +7169,7 @@ Measurements
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -11692,148 +7179,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-411
-
-</td>
-
-<td style="text-align:left;">
-
-Guion:2003ty
-
-</td>
-
-<td style="text-align:left;">
-
-The vowel systems of Quichua-Spanish bilinguals
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-412
-
-</td>
-
-<td style="text-align:left;">
-
-grosjean2012attempt
-
-</td>
-
-<td style="text-align:left;">
-
-An attempt to isolate, and then differentiate, transfer and interference
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-413
-
-</td>
-
-<td style="text-align:left;">
-
-Elman:1977dx
-
-</td>
-
-<td style="text-align:left;">
-
-Perceptual switching in bilinguals
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-414
-
-</td>
-
-<td style="text-align:left;">
-
-Beach:2001id
-
-</td>
-
-<td style="text-align:left;">
-
-Bilingualism and the relationship between perception and production:
-Greek/English bilinguals and Thai bilabial stops
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-415
-
-</td>
-
-<td style="text-align:left;">
-
-LAMBERT1960
-
-</td>
-
-<td style="text-align:left;">
-
-Evaluational reactions to spoken languages.
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-416
+244
 
 </td>
 
@@ -11861,36 +7207,7 @@ VOLUME, PAGES, NUMBER
 
 <td style="text-align:right;">
 
-417
-
-</td>
-
-<td style="text-align:left;">
-
-morgan2012explicit
-
-</td>
-
-<td style="text-align:left;">
-
-Explicit and implicit second language training differentially affect the
-achievement of native-like brain activation patterns
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-418
+245
 
 </td>
 
@@ -11908,7 +7225,7 @@ Phonemic Rhythm in Comanche
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -11918,64 +7235,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-419
-
-</td>
-
-<td style="text-align:left;">
-
-CT1988
-
-</td>
-
-<td style="text-align:left;">
-
-Examination of perceptual reorganization for nonnative speech contrasts:
-Zulu click discrimination by English-speaking adults and infants.
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-420
-
-</td>
-
-<td style="text-align:left;">
-
-Abramson1973
-
-</td>
-
-<td style="text-align:left;">
-
-Voice-Timing Perception in Spanish Word-Initial Stops
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-421
+246
 
 </td>
 
@@ -11993,7 +7253,7 @@ Comanche Linguistic Acculturation
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -12003,7 +7263,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-422
+247
 
 </td>
 
@@ -12022,7 +7282,7 @@ and status quaestionis
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -12032,7 +7292,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-423
+248
 
 </td>
 
@@ -12060,7 +7320,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-424
+249
 
 </td>
 
@@ -12078,7 +7338,7 @@ Supervision hampers distributional learning of vowel contrasts
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH, JOURNAL
+VOLUME, PAGES, NUMBER, JOURNAL
 
 </td>
 
@@ -12088,35 +7348,7 @@ VOLUME, PAGES, NUMBER, MONTH, JOURNAL
 
 <td style="text-align:right;">
 
-425
-
-</td>
-
-<td style="text-align:left;">
-
-au2008salvaging
-
-</td>
-
-<td style="text-align:left;">
-
-Salvaging a childhood language
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-426
+250
 
 </td>
 
@@ -12134,7 +7366,7 @@ Don Quijote’s Metaphors and the Grammar of Proper Language
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -12144,64 +7376,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-427
-
-</td>
-
-<td style="text-align:left;">
-
-Llanes:2012jh
-
-</td>
-
-<td style="text-align:left;">
-
-Age Effects in a Study Abroad Context: Children and Adults Studying
-Abroad and at Home
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-428
-
-</td>
-
-<td style="text-align:left;">
-
-escudero2010effect
-
-</td>
-
-<td style="text-align:left;">
-
-The effect of L1 orthography on non-native vowel perception
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-429
+251
 
 </td>
 
@@ -12219,7 +7394,7 @@ What is Optimality Theory?
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -12229,7 +7404,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-430
+252
 
 </td>
 
@@ -12248,7 +7423,7 @@ From acoustic-phonetic analysis to lexical access
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -12258,35 +7433,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-431
-
-</td>
-
-<td style="text-align:left;">
-
-Ladd:1997vn
-
-</td>
-
-<td style="text-align:left;">
-
-The perception of intonational emphasis: continuous or categorical?
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-432
+253
 
 </td>
 
@@ -12314,36 +7461,7 @@ VOLUME, PAGES, NUMBER
 
 <td style="text-align:right;">
 
-433
-
-</td>
-
-<td style="text-align:left;">
-
-Darcy2012
-
-</td>
-
-<td style="text-align:left;">
-
-Direct mapping of acoustics to phonology: On the lexical encoding of
-front rounded vowels in L1 English–L2 French acquisition
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-434
+254
 
 </td>
 
@@ -12361,7 +7479,7 @@ Three functions of output in second language learning
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -12371,7 +7489,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-435
+255
 
 </td>
 
@@ -12390,7 +7508,7 @@ consonants in Catalan
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -12400,7 +7518,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-436
+256
 
 </td>
 
@@ -12429,7 +7547,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-437
+257
 
 </td>
 
@@ -12448,7 +7566,7 @@ contours in Catalan{}Spanish early bilinguals
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -12458,7 +7576,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-438
+258
 
 </td>
 
@@ -12476,7 +7594,7 @@ A cross-dialect comparison of Peninsula-and Peruvian-Spanish vowels
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -12486,63 +7604,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-439
-
-</td>
-
-<td style="text-align:left;">
-
-Hyltenstam:2009gn
-
-</td>
-
-<td style="text-align:left;">
-
-Dominant-language replacement: The case of international adoptees
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-440
-
-</td>
-
-<td style="text-align:left;">
-
-JongKong:2012cc
-
-</td>
-
-<td style="text-align:left;">
-
-Voiced stop prenasalization in two dialects of Greek
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-441
+259
 
 </td>
 
@@ -12561,7 +7623,7 @@ Spanish Listeners
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -12571,64 +7633,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-442
-
-</td>
-
-<td style="text-align:left;">
-
-Hyltenstam:2009ly
-
-</td>
-
-<td style="text-align:left;">
-
-Dominant-language replacement: The case of international adoptees
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-443
-
-</td>
-
-<td style="text-align:left;">
-
-de2012singing
-
-</td>
-
-<td style="text-align:left;">
-
-Singing a different tune in your native language: first language
-attrition of prosody
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-444
+260
 
 </td>
 
@@ -12647,7 +7652,7 @@ Italian-English bilinguals
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -12657,7 +7662,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-445
+261
 
 </td>
 
@@ -12685,35 +7690,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-446
-
-</td>
-
-<td style="text-align:left;">
-
-sebastian2011bilingual
-
-</td>
-
-<td style="text-align:left;">
-
-Bilingual Language Acquisition: Where Does the Difference Lie?
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-447
+262
 
 </td>
 
@@ -12741,36 +7718,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-448
-
-</td>
-
-<td style="text-align:left;">
-
-albareda2011acquisition
-
-</td>
-
-<td style="text-align:left;">
-
-The acquisition of phonetic categories in bilingual infants: new data
-from an anticipatory eye movement paradigm
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-449
+263
 
 </td>
 
@@ -12788,7 +7736,7 @@ Conflicting values at a conflicting age
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -12798,7 +7746,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-450
+264
 
 </td>
 
@@ -12816,7 +7764,7 @@ The role of perception in the sound change of velar palatalization
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -12826,7 +7774,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-451
+265
 
 </td>
 
@@ -12844,7 +7792,7 @@ Review of B.F. Skinner, Verbal Behavior
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -12854,35 +7802,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-452
-
-</td>
-
-<td style="text-align:left;">
-
-Cebrian:2006el
-
-</td>
-
-<td style="text-align:left;">
-
-Experience and the use of non-native duration in L2 vowel categorization
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-453
+266
 
 </td>
 
@@ -12901,7 +7821,7 @@ cross-dialect listeners
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -12911,7 +7831,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-454
+267
 
 </td>
 
@@ -12930,7 +7850,7 @@ Catalonia
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -12940,7 +7860,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-455
+268
 
 </td>
 
@@ -12968,65 +7888,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-456
-
-</td>
-
-<td style="text-align:left;">
-
-Bosch:2011cp
-
-</td>
-
-<td style="text-align:left;">
-
-Variability in vowel production by bilingual speakers: can input
-properties hinder the early stabilization of contrastive categories?
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-457
-
-</td>
-
-<td style="text-align:left;">
-
-lee2012effects
-
-</td>
-
-<td style="text-align:left;">
-
-Effects of speaker variability and noise on Mandarin fricative
-identification by native and non-native listeners
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-458
+269
 
 </td>
 
@@ -13045,7 +7907,7 @@ Communities of Spain
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -13055,35 +7917,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-459
-
-</td>
-
-<td style="text-align:left;">
-
-Andrews:1949p119
-
-</td>
-
-<td style="text-align:left;">
-
-Aspectos Sociol{'o}gicos del Lenguaje Popular
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-460
+270
 
 </td>
 
@@ -13102,7 +7936,7 @@ c’{'e}tait
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -13112,7 +7946,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-461
+271
 
 </td>
 
@@ -13141,35 +7975,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-462
-
-</td>
-
-<td style="text-align:left;">
-
-Oh:2003is
-
-</td>
-
-<td style="text-align:left;">
-
-Holding on to childhood language memory
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-463
+272
 
 </td>
 
@@ -13188,7 +7994,7 @@ Psychophysiological Data
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -13198,35 +8004,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-464
-
-</td>
-
-<td style="text-align:left;">
-
-sebastian2012first
-
-</td>
-
-<td style="text-align:left;">
-
-First and Second Language Speech Perception: Graded Learning
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-465
+273
 
 </td>
 
@@ -13245,7 +8023,7 @@ northwestern Spain
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -13255,7 +8033,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-466
+274
 
 </td>
 
@@ -13275,7 +8053,7 @@ cues
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -13285,7 +8063,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-467
+275
 
 </td>
 
@@ -13313,7 +8091,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-468
+276
 
 </td>
 
@@ -13341,36 +8119,7 @@ NUMBER
 
 <td style="text-align:right;">
 
-469
-
-</td>
-
-<td style="text-align:left;">
-
-Sebastian-Galles:2009pd
-
-</td>
-
-<td style="text-align:left;">
-
-Lexical plasticity in early bilinguals does not alter phoneme
-categories: II. Experimental evidence
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-470
+277
 
 </td>
 
@@ -13389,7 +8138,7 @@ English vowels
 
 <td style="text-align:left;">
 
-PAGES, MONTH
+PAGES
 
 </td>
 
@@ -13399,7 +8148,7 @@ PAGES, MONTH
 
 <td style="text-align:right;">
 
-471
+278
 
 </td>
 
@@ -13418,7 +8167,7 @@ Effects of local context
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -13428,35 +8177,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-472
-
-</td>
-
-<td style="text-align:left;">
-
-Peirce:2008gm
-
-</td>
-
-<td style="text-align:left;">
-
-Generating stimuli for neuroscience using PsychoPy
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-473
+279
 
 </td>
 
@@ -13475,7 +8196,7 @@ for the English interdentals
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -13485,7 +8206,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-474
+280
 
 </td>
 
@@ -13513,64 +8234,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-475
-
-</td>
-
-<td style="text-align:left;">
-
-gordon2002cross
-
-</td>
-
-<td style="text-align:left;">
-
-A cross-linguistic acoustic study of voiceless fricatives
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-476
-
-</td>
-
-<td style="text-align:left;">
-
-Clopper2005
-
-</td>
-
-<td style="text-align:left;">
-
-Acoustic characteristics of the vowel systems of six regional varieties
-of American English
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-477
+281
 
 </td>
 
@@ -13588,7 +8252,7 @@ No double plurals in dominican spanish: an optimality-theoretic account
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -13598,36 +8262,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-478
-
-</td>
-
-<td style="text-align:left;">
-
-antoniou2012two
-
-</td>
-
-<td style="text-align:left;">
-
-Two ways to listen: do L2-dominant bilinguals perceive stop voicing
-according to language mode?
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-479
+282
 
 </td>
 
@@ -13655,7 +8290,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-480
+283
 
 </td>
 
@@ -13673,7 +8308,7 @@ Memory interference during language processing
 
 <td style="text-align:left;">
 
-PAGES, MONTH
+PAGES
 
 </td>
 
@@ -13683,7 +8318,7 @@ PAGES, MONTH
 
 <td style="text-align:right;">
 
-481
+284
 
 </td>
 
@@ -13711,35 +8346,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-482
-
-</td>
-
-<td style="text-align:left;">
-
-Pallier1997a
-
-</td>
-
-<td style="text-align:left;">
-
-A limit on behavioral plasticity in speech perception
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-483
+285
 
 </td>
 
@@ -13767,7 +8374,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-484
+286
 
 </td>
 
@@ -13796,7 +8403,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-485
+287
 
 </td>
 
@@ -13814,7 +8421,7 @@ Age Constraints on Second-Language Acquisition
 
 <td style="text-align:left;">
 
-PAGES, MONTH
+PAGES
 
 </td>
 
@@ -13824,7 +8431,7 @@ PAGES, MONTH
 
 <td style="text-align:right;">
 
-486
+288
 
 </td>
 
@@ -13843,7 +8450,7 @@ data
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -13853,7 +8460,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-487
+289
 
 </td>
 
@@ -13871,7 +8478,7 @@ Phonological representations and repetition priming
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -13881,207 +8488,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-488
-
-</td>
-
-<td style="text-align:left;">
-
-escudero2004bridging
-
-</td>
-
-<td style="text-align:left;">
-
-Bridging the gap between L2 speech perception research and phonological
-theory
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-489
-
-</td>
-
-<td style="text-align:left;">
-
-Navarra2005
-
-</td>
-
-<td style="text-align:left;">
-
-The Perception of Second Language Sounds in Early Bilinguals: New
-Evidence from an Implicit Measure
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-490
-
-</td>
-
-<td style="text-align:left;">
-
-Kinginger:2008fg
-
-</td>
-
-<td style="text-align:left;">
-
-Language Learning in Study Abroad: Case Studies of Americans in France
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-491
-
-</td>
-
-<td style="text-align:left;">
-
-ressel2012effect
-
-</td>
-
-<td style="text-align:left;">
-
-An Effect of Bilingualism on the Auditory Cortex
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-492
-
-</td>
-
-<td style="text-align:left;">
-
-brenders2011word
-
-</td>
-
-<td style="text-align:left;">
-
-Word recognition in child second language learners: Evidence from
-cognates and false friends
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-493
-
-</td>
-
-<td style="text-align:left;">
-
-Hernandez:2010kr
-
-</td>
-
-<td style="text-align:left;">
-
-The Relationship Among Motivation, Interaction, and the Development of
-Second Language Oral Proficiency in a Study-Abroad Context
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-494
-
-</td>
-
-<td style="text-align:left;">
-
-Parrell:2012ira
-
-</td>
-
-<td style="text-align:left;">
-
-The role of gestural phasing in Western Andalusian Spanish aspiration
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-495
+290
 
 </td>
 
@@ -14100,7 +8507,7 @@ universal factors in stop voicing judgments
 
 <td style="text-align:left;">
 
-VOLUME, MONTH
+VOLUME
 
 </td>
 
@@ -14110,7 +8517,7 @@ VOLUME, MONTH
 
 <td style="text-align:right;">
 
-496
+291
 
 </td>
 
@@ -14129,7 +8536,7 @@ aggressiveness for consonants and vowels in Catalan
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -14139,7 +8546,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-497
+292
 
 </td>
 
@@ -14167,7 +8574,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-498
+293
 
 </td>
 
@@ -14195,7 +8602,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-499
+294
 
 </td>
 
@@ -14213,7 +8620,7 @@ Consonant lenition and phonological recategorization
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -14223,35 +8630,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-500
-
-</td>
-
-<td style="text-align:left;">
-
-zimmerman1958note
-
-</td>
-
-<td style="text-align:left;">
-
-Note on vowel duration seen cross-linguistically
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-501
+295
 
 </td>
 
@@ -14280,36 +8659,7 @@ VOLUME, NUMBER
 
 <td style="text-align:right;">
 
-502
-
-</td>
-
-<td style="text-align:left;">
-
-Simonet:2012jx
-
-</td>
-
-<td style="text-align:left;">
-
-Dialectal Differences in Spanish Voiced Obstruent Allophony: Costa Rican
-versus Iberian Spanish
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-503
+296
 
 </td>
 
@@ -14337,36 +8687,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-504
-
-</td>
-
-<td style="text-align:left;">
-
-Tucker1969
-
-</td>
-
-<td style="text-align:left;">
-
-White and Negro Listeners’ Reactions to Various American-English
-Dialects
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-505
+297
 
 </td>
 
@@ -14394,35 +8715,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-506
-
-</td>
-
-<td style="text-align:left;">
-
-Whitehead1968
-
-</td>
-
-<td style="text-align:left;">
-
-Factors of source credibility
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-507
+298
 
 </td>
 
@@ -14441,7 +8734,7 @@ short-term study abroad program
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -14451,7 +8744,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-508
+299
 
 </td>
 
@@ -14469,7 +8762,7 @@ Consonant lenition and phonological recategorization
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -14479,35 +8772,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-509
-
-</td>
-
-<td style="text-align:left;">
-
-Hay2010
-
-</td>
-
-<td style="text-align:left;">
-
-Stuffed toys and speech perception
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-510
+300
 
 </td>
 
@@ -14535,7 +8800,7 @@ VOLUME, NUMBER, JOURNAL
 
 <td style="text-align:right;">
 
-511
+301
 
 </td>
 
@@ -14553,7 +8818,7 @@ Technology in Phonetic Science: Setting Up a Basic Phonetics Laboratory.
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -14563,7 +8828,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-512
+302
 
 </td>
 
@@ -14582,7 +8847,7 @@ hearing and hearing impaired subjects
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH, JOURNAL
+VOLUME, PAGES, NUMBER, JOURNAL
 
 </td>
 
@@ -14592,7 +8857,7 @@ VOLUME, PAGES, NUMBER, MONTH, JOURNAL
 
 <td style="text-align:right;">
 
-513
+303
 
 </td>
 
@@ -14610,7 +8875,7 @@ Categorical Perception of English /r/ and /l/ by Japanese Bilinguals
 
 <td style="text-align:left;">
 
-PAGES, NUMBER, MONTH, JOURNAL
+PAGES, NUMBER, JOURNAL
 
 </td>
 
@@ -14620,7 +8885,7 @@ PAGES, NUMBER, MONTH, JOURNAL
 
 <td style="text-align:right;">
 
-514
+304
 
 </td>
 
@@ -14638,7 +8903,7 @@ Identity constraints and Spanish resyllabification\* 1
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -14648,7 +8913,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-515
+305
 
 </td>
 
@@ -14666,7 +8931,7 @@ I chat, thereby I groom
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -14676,36 +8941,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-516
-
-</td>
-
-<td style="text-align:left;">
-
-levey2004
-
-</td>
-
-<td style="text-align:left;">
-
-Discrimination and Production of English Vowels by Bilingual Speakers of
-Spanish and English
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-517
+306
 
 </td>
 
@@ -14724,7 +8960,7 @@ constraint-based approach
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -14734,7 +8970,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-518
+307
 
 </td>
 
@@ -14752,7 +8988,7 @@ The Causal Theory of Perception
 
 <td style="text-align:left;">
 
-NUMBER, MONTH
+NUMBER
 
 </td>
 
@@ -14762,266 +8998,7 @@ NUMBER, MONTH
 
 <td style="text-align:right;">
 
-519
-
-</td>
-
-<td style="text-align:left;">
-
-Cubillos:2012jq
-
-</td>
-
-<td style="text-align:left;">
-
-The Impact of Study Abroad on Students’ Self-Efficacy Perceptions
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-520
-
-</td>
-
-<td style="text-align:left;">
-
-Polka:2011fp
-
-</td>
-
-<td style="text-align:left;">
-
-Natural Referent Vowel (NRV) framework: an emerging view of early
-phonetic development
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-521
-
-</td>
-
-<td style="text-align:left;">
-
-Kuhl:2008kx
-
-</td>
-
-<td style="text-align:left;">
-
-Phonetic learning as a pathway to language: New data and native language
-magnet theory expanded (NLM-e)
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-522
-
-</td>
-
-<td style="text-align:left;">
-
-Lev-Ari2010
-
-</td>
-
-<td style="text-align:left;">
-
-Why don’t we believe non-native speakers? The influence of accent on
-credibility
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-523
-
-</td>
-
-<td style="text-align:left;">
-
-Batstone:2002kt
-
-</td>
-
-<td style="text-align:left;">
-
-Contexts of engagement: a discourse perspective on {}intake{} and
-{}pushed output{}
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-524
-
-</td>
-
-<td style="text-align:left;">
-
-Morrison:2005hp
-
-</td>
-
-<td style="text-align:left;">
-
-An appropriate metric for cue weighting in L2 speech perception:
-response to Escudero and Boersma (2004)
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-525
-
-</td>
-
-<td style="text-align:left;">
-
-Bialystok2008
-
-</td>
-
-<td style="text-align:left;">
-
-Bilingualism: The good, the bad, and the indifferent
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-526
-
-</td>
-
-<td style="text-align:left;">
-
-mora2012l2
-
-</td>
-
-<td style="text-align:left;">
-
-L2 effects on the perception and production of a native vowel contrast
-in early bilinguals
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-527
-
-</td>
-
-<td style="text-align:left;">
-
-Beaudrie2005
-
-</td>
-
-<td style="text-align:left;">
-
-Beginning Level University Heritage Programs: Creating a Space for All
-Heritage Language Learners
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-528
+308
 
 </td>
 
@@ -15039,7 +9016,7 @@ Against the direct realist view of speech perception.
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -15049,35 +9026,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-529
-
-</td>
-
-<td style="text-align:left;">
-
-broersma2011competition
-
-</td>
-
-<td style="text-align:left;">
-
-Competition dynamics of second-language listening
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-530
+309
 
 </td>
 
@@ -15095,7 +9044,7 @@ Factors affecting degree of foreign accent in an L2 : a review
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH, JOURNAL
+VOLUME, NUMBER, JOURNAL
 
 </td>
 
@@ -15105,94 +9054,7 @@ VOLUME, NUMBER, MONTH, JOURNAL
 
 <td style="text-align:right;">
 
-531
-
-</td>
-
-<td style="text-align:left;">
-
-Costa:2009zr
-
-</td>
-
-<td style="text-align:left;">
-
-On the bilingual advantage in conflict processing: now you see it, now
-you don’t
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-532
-
-</td>
-
-<td style="text-align:left;">
-
-DeKeyser:2013dn
-
-</td>
-
-<td style="text-align:left;">
-
-Age Effects in Second Language Learning: Stepping Stones Toward Better
-Understanding
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-533
-
-</td>
-
-<td style="text-align:left;">
-
-zubizarreta2011encoding
-
-</td>
-
-<td style="text-align:left;">
-
-Encoding discourse-based meaning: Prosody vs. syntax. Implications for
-second language acquisition
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-534
+310
 
 </td>
 
@@ -15211,7 +9073,7 @@ Spanish vowels
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -15221,7 +9083,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-535
+311
 
 </td>
 
@@ -15239,7 +9101,7 @@ Intraethnic attitudes among Hispanics in a Northern California community
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -15249,7 +9111,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-536
+312
 
 </td>
 
@@ -15268,7 +9130,7 @@ for Australian English than Spanish listeners?
 
 <td style="text-align:left;">
 
-VOLUME, NUMBER, MONTH
+VOLUME, NUMBER
 
 </td>
 
@@ -15278,7 +9140,7 @@ VOLUME, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-537
+313
 
 </td>
 
@@ -15297,7 +9159,7 @@ Portuguese
 
 <td style="text-align:left;">
 
-VOLUME, PAGES, NUMBER, MONTH
+VOLUME, PAGES, NUMBER
 
 </td>
 
@@ -15307,7 +9169,7 @@ VOLUME, PAGES, NUMBER, MONTH
 
 <td style="text-align:right;">
 
-538
+314
 
 </td>
 
@@ -15326,34 +9188,6 @@ A Very Brief Introduction To Bayesian Statistics for Linguists
 <td style="text-align:left;">
 
 VOLUME, NUMBER, JOURNAL
-
-</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align:right;">
-
-539
-
-</td>
-
-<td style="text-align:left;">
-
-Au:2002dga
-
-</td>
-
-<td style="text-align:left;">
-
-Overhearing a language during childhood
-
-</td>
-
-<td style="text-align:left;">
-
-MONTH
 
 </td>
 
