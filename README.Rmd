@@ -222,13 +222,14 @@ get_cols <- function(bib) {
 # Create table of bibcite key and missing field(s)
 bib %>% 
   filter(., CATEGORY == "ARTICLE") %>% 
-  select(., BIBTEXKEY, CATEGORY, YEAR, TITLE, PAGES, JOURNAL, AUTHOR) %>% 
+  select(., BIBTEXKEY, YEAR, VOLUME, TITLE, PAGES, NUMBER, 
+            MONTH, JOURNAL, AUTHOR) %>%   
   filter_all(., any_vars(is.na(.))) %>% 
   mutate(., n = row_number(), what = get_cols(.)) %>% 
-  select(., n, BIBTEXKEY, what) %>% 
+  select(., n, BIBTEXKEY, TITLE, what) %>% 
   kable(., format = 'html') %>% 
-  kableExtra::kable_styling(bootstrap_options = 'basic', position = 'center', 
-                            font_size = 10)
+  kableExtra::kable_styling(bootstrap_options = 'striped', position = 'center', 
+                            full_width = TRUE, font_size = 10)
 ```
 
 ```{r, 'cleanup'}
