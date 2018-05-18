@@ -208,13 +208,12 @@ bib %>%
     geom_bar(stat = "identity", color = 'black', fill = 'grey30', width = 0.5) + 
     geom_point(pch = 21, fill = 'grey60', size = 15) + 
     geom_text(color = 'white') + 
-    ylab("Proportion Missing") + 
     ylim(c(0,1)) +
-    xlab("") + 
+    labs(y = "Proportion Missing", x = "Field") + 
     coord_flip()
 ```
 
-<img src="https://i.imgur.com/ALglqgb.png" width="960" />
+<img src="https://i.imgur.com/D1wIuhG.png" width="960" />
 
 ``` r
 unlink("cache", recursive = TRUE)

@@ -185,7 +185,7 @@ bib %>%
 
 ## Missing fields
 
-```{r, 'missing-fields'}
+```{r, 'missing-fields', fig.height=4}
 missingness <- function(x) {
   prop <- sum(is.na(x) == TRUE) / length(x)
   return(prop)
@@ -203,9 +203,8 @@ bib %>%
     geom_bar(stat = "identity", color = 'black', fill = 'grey30', width = 0.5) + 
     geom_point(pch = 21, fill = 'grey60', size = 15) + 
     geom_text(color = 'white') + 
-    ylab("Proportion Missing") + 
     ylim(c(0,1)) +
-    xlab("") + 
+    labs(y = "Proportion Missing", x = "Field") + 
     coord_flip()
 ```
 
