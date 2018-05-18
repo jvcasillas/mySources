@@ -155,7 +155,7 @@ cograph %>%
   theme_void()
 ```
 
-### Betweenness centrality (?)
+### Betweenness centrality 
 
 ```{r, 'betweeness-centrality', fig.height=7}
 betweenness(cograph) %>% 

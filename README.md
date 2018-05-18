@@ -157,7 +157,7 @@ cograph %>%
 
 <img src="https://i.imgur.com/G0t0erj.png" width="960" />
 
-### Betweenness centrality (?)
+### Betweenness centrality
 
 ``` r
 betweenness(cograph) %>% 
