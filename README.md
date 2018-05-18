@@ -9,7 +9,7 @@ library(here)
 library(bib2df)
 library(igraph)
 library(ggraph)
-theme_set(theme_test())
+theme_set(theme_minimal(base_family = 'Times', base_size = 16))
 ```
 
 ## About bib
@@ -46,21 +46,19 @@ bib <- bib2df("papers.bib")
 ## Citation Types
 
 ``` r
-counts <- xtabs(~CATEGORY, data = bib) %>% as.tibble
-
-counts %>% 
+xtabs(~CATEGORY, data = bib) %>% 
+  as.tibble(.) %>% 
   mutate(., CATEGORY = fct_reorder(CATEGORY, n)) %>% 
   ggplot(., aes(x = CATEGORY, y = n, label = n)) + 
     geom_bar(stat = 'identity', color = 'black', 
-             fill = 'lightblue', width = 0.1) + 
-    geom_point(pch = 21, size = 10, color = 'black', fill = 'lightgrey') + 
+             fill = 'darkgrey', width = 0.3) + 
+    geom_point(pch = 21, size = 12, color = 'black', fill = 'lightgrey') + 
     geom_text() + 
     labs(y = "Count", x = "Citation Type") + 
-    coord_flip() + 
-    theme_test()
+    coord_flip() 
 ```
 
-<img src="https://i.imgur.com/hOlsKah.png" width="960" />
+<img src="https://i.imgur.com/9d4wkXa.png" width="960" />
 
 ## Journals
 
@@ -79,11 +77,10 @@ bib %>%
     geom_text() + 
     labs(y = "Count", x = "Journal") + 
     scale_x_discrete(expand = expand_scale(0.04))  + 
-    coord_flip() + 
-    theme_test()
+    coord_flip() 
 ```
 
-<img src="https://i.imgur.com/zky96tL.png" width="960" />
+<img src="https://i.imgur.com/XmrJyqc.png" width="960" />
 
 ## Authors
 
@@ -100,16 +97,15 @@ top_authors %>%
   mutate(., value = fct_reorder(value, counts)) %>% 
   ggplot(., aes(x = value, y = counts, label = counts)) + 
     geom_bar(stat = "identity", color = 'black', 
-             fill = 'lightblue', width = 0.1) + 
+             fill = 'darkgrey', width = 0.3) + 
     geom_point(pch = 21, size = 10, color = 'black', fill = 'lightgrey') + 
     geom_text() + 
     labs(y = "Count", x = "Author") + 
     scale_x_discrete(expand = expand_scale(0.04)) + 
-    coord_flip() + 
-    theme_test()
+    coord_flip()
 ```
 
-<img src="https://i.imgur.com/lGo6e6N.png" width="960" />
+<img src="https://i.imgur.com/ql6tjL7.png" width="960" />
 
 ## Co-authors
 
@@ -122,11 +118,10 @@ bib %>%
   ggplot(., aes(x = YEAR, y = n_authors)) + 
     geom_jitter(height = 0.2, alpha = 0.5, pch = 20) + 
     geom_smooth(method = "glm", method.args = list(family = "poisson")) + 
-    labs(x = "Publication Year", y = "Coauthors per Publication") + 
-    theme_test()
+    labs(x = "Publication Year", y = "Coauthors per Publication")
 ```
 
-<img src="https://i.imgur.com/0ZHMXzh.png" width="960" />
+<img src="https://i.imgur.com/Vxq51rT.png" width="960" />
 
 ### Co-authors network
 
@@ -156,11 +151,11 @@ cograph <- bib$AUTHOR %>%
 cograph %>% 
   ggraph(., "igraph", algorithm = "nicely") + 
   geom_edge_link(aes(edge_width = log(sum)), colour = "gray") + 
-  geom_node_text(aes(label = name), fontface = 1, size = 2) + 
+  geom_node_text(aes(label = name), fontface = 1, size = 3.5) + 
   theme_void()
 ```
 
-<img src="https://i.imgur.com/h4GvSnd.png" width="960" />
+<img src="https://i.imgur.com/G0t0erj.png" width="960" />
 
 ### Betweenness centrality (?)
 
@@ -171,23 +166,27 @@ betweenness(cograph) %>%
   arrange(., desc(betweenness)) %>% 
   slice(., 1:30) %>% 
   mutate(., authors = fct_reorder(authors, betweenness)) %>% 
-  ggplot(., aes(x = authors, y = betweenness)) + 
+  ggplot(., aes(x = authors, y = betweenness, label = round(betweenness))) + 
     geom_bar(stat = "identity") + 
+    geom_point(pch = 21, size = 11, fill = 'grey70') + 
+    geom_text(color = 'white') + 
     labs(y = "Network Betweenness", x = "Author Name") + 
+    scale_x_discrete(expand = expand_scale(0.04)) + 
     coord_flip()
 ```
 
-<img src="https://i.imgur.com/WafWcLi.png" width="960" />
+<img src="https://i.imgur.com/2wjD4nL.png" width="960" />
 
 ## Publication Years
 
 ``` r
 bib %>% 
   ggplot(., aes(x = YEAR)) + 
-    geom_histogram(binwidth = 1, color = 'black') 
+    geom_histogram(binwidth = 1, color = 'black', fill = 'grey60') + 
+    scale_x_continuous(breaks = seq(1900, 2020, 10))
 ```
 
-<img src="https://i.imgur.com/5S6JVxK.png" width="960" />
+<img src="https://i.imgur.com/sTa0Mkh.png" width="960" />
 
 ## Missing fields
 
@@ -205,15 +204,17 @@ bib %>%
   unlist(.) %>% 
   enframe(.) %>% 
   mutate(., name = fct_reorder(name, value)) %>% 
-  ggplot(., aes(x = name, y = value)) +
-    geom_bar(stat = "identity") + 
+  ggplot(., aes(x = name, y = value, label = round(value, 2))) +
+    geom_bar(stat = "identity", color = 'black', fill = 'grey30', width = 0.5) + 
+    geom_point(pch = 21, fill = 'grey60', size = 15) + 
+    geom_text(color = 'white') + 
     ylab("Proportion Missing") + 
     ylim(c(0,1)) +
     xlab("") + 
     coord_flip()
 ```
 
-<img src="https://i.imgur.com/tF2DoRh.png" width="960" />
+<img src="https://i.imgur.com/ALglqgb.png" width="960" />
 
 ``` r
 unlink("cache", recursive = TRUE)
