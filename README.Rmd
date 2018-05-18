@@ -212,12 +212,23 @@ bib %>%
 ## List of incomplete articles
 
 ```{r, 'incompletes-to-fix'}
+# Function to get name of missing field where
+# for each bib entry
+get_cols <- function(bib) {
+  cols <- simplify2array(apply(bib, 1, function(x) paste(names(bib)[is.na(x)], collapse = ", ")))
+  return(cols)
+}
+
+# Create table of bibcite key and missing field(s)
 bib %>% 
   filter(., CATEGORY == "ARTICLE") %>% 
-  select(., CATEGORY, YEAR, TITLE, PAGES, JOURNAL, AUTHOR) %>% 
+  select(., BIBTEXKEY, CATEGORY, YEAR, TITLE, PAGES, JOURNAL, AUTHOR) %>% 
   filter_all(., any_vars(is.na(.))) %>% 
-  select(., AUTHOR, TITLE) %>% 
-  kable(., output = 'html')
+  mutate(., n = row_number(), what = get_cols(.)) %>% 
+  select(., n, BIBTEXKEY, what) %>% 
+  kable(., format = 'html') %>% 
+  kableExtra::kable_styling(bootstrap_options = 'basic', position = 'center', 
+                            font_size = 10)
 ```
 
 ```{r, 'cleanup'}

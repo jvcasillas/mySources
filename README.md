@@ -219,223 +219,4612 @@ bib %>%
 ## List of incomplete articles
 
 ``` r
+# Function to get name of missing field where
+# for each bib entry
+get_cols <- function(bib) {
+  cols <- simplify2array(apply(bib, 1, function(x) paste(names(bib)[is.na(x)], collapse = ", ")))
+  return(cols)
+}
+
+# Create table of bibcite key and missing field(s)
 bib %>% 
   filter(., CATEGORY == "ARTICLE") %>% 
-  select(., CATEGORY, YEAR, TITLE, PAGES, JOURNAL, AUTHOR) %>% 
+  select(., BIBTEXKEY, CATEGORY, YEAR, TITLE, PAGES, JOURNAL, AUTHOR) %>% 
   filter_all(., any_vars(is.na(.))) %>% 
-  select(., AUTHOR, TITLE) %>% 
-  kable(., output = 'html')
+  mutate(., n = row_number(), what = get_cols(.)) %>% 
+  select(., n, BIBTEXKEY, what) %>% 
+  kable(., format = 'html') %>% 
+  kableExtra::kable_styling(bootstrap_options = 'basic', position = 'center', 
+                            font_size = 10)
 ```
 
-| AUTHOR                                                                                                          | TITLE                                                                                                                                                              |
-| :-------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Colina, Sonia                                                                                                   | Clases naturales Ej.                                                                                                                                               |
-| Zahn, Ista                                                                                                      | Learning to Sweave in APA style                                                                                                                                    |
-| Hualde, Jos{'e} Ignacio                                                                                         | Procesos conson{'a}nticos y estructuras geom{'e}tricas en espa{~n}ol                                                                                               |
-| c(“Sundara, M”, “Polka, L”, “Molnar, M”)                                                                        | Development of coronal stop perception: Bilingual infants keep pace with their monolingual peers                                                                   |
-| Bosque, Ignacio                                                                                                 | La negaci{'o}n y el principio de las categor{'}as vac{'}as                                                                                                         |
-| Colina, Sonia                                                                                                   | Repaso sistema fonol{'o}gico                                                                                                                                       |
-| Schertz, Jessamyn                                                                                               | Exaggeration of featural contrasts in clarifications of misheard speech in English                                                                                 |
-| Dunbar, Robin I M                                                                                               | Coevolution of neocortex size, group size and language in humans                                                                                                   |
-| c(“Hickok, G”, “Buchsbaum, B”, “Humphries, C”)                                                                  | Auditory-motor interaction revealed by fMRI: speech, music, and working memory in area Spt                                                                         |
-| MacKay, D G                                                                                                     | Asynlmetries in the Relationsh ip Between Speech Perception and Production                                                                                         |
-| c(“Lakens, Dani{\\"e}l”, “Scheel, Anne M”, “Isager, Peder M”)                                                   | Equivalence Testing for Psychological Research: A Tutorial                                                                                                         |
-| Morrison, Geoffrey Stewart                                                                                      | L1-Spanish Speakers’ Acquisition of the English/i/{}/I/Contrast: Duration-based Perception is Not the Initial Developmental Stage                                  |
-| Michnowicz, J                                                                                                   | El habla de Yucat{'a}m: Final \[m\] in a Dialect in Contact                                                                                                        |
-| c(“Ringen, C”, “Suomi, Kari”)                                                                                   | The voicing contrast in Fenno-Swedish stops                                                                                                                        |
-| Vogel, Ralf                                                                                                     | xyling {} LATEX macros for linguistic graphics using the xypic module                                                                                              |
-| Plichta, Bartlomiej                                                                                             | AKUSTYK for Praat                                                                                                                                                  |
-| Casillas, Joseph Vincent                                                                                        | EL USO DE LOS REFRANES EN                                                                                                                                          |
-| Correa, Maite                                                                                                   | Metalinguistic knowledge and the acquisition of the Spanish subjunctive by learners at three proficiency levels                                                    |
-| Healy, Kieran                                                                                                   | Choosing Your Workflow Applications                                                                                                                                |
-| Teetor, Paul                                                                                                    | R~Cookbook                                                                                                                                                         |
-| c(“Caramazza, A”, “Yeni-Komshian, GH”, “Zurif, E B”, “Carbone, E”)                                              | The acquisition of a new phonological contrast: The case of stop consonants in French-English bilinguals                                                           |
-| Peng, Roger D                                                                                                   | R Programming for Data Science                                                                                                                                     |
-| Peng, Roger D                                                                                                   | Exploratory Data Analysis with R                                                                                                                                   |
-| Pakin, Scott                                                                                                    | The Comprehensive LaTeX Symbol List                                                                                                                                |
-| c(“van Leussen, J W”, “Williams, D”, “Escudero, Paola”)                                                         | Acoustic properties of Dutch steady-state vowels: Contextual effects and a comparison with previous studies                                                        |
-| Myers, Scott                                                                                                    | Vowel duration and neutralization of vowel length contrasts in Kinyarwanda                                                                                         |
-| Colina, Sonia                                                                                                   | Conceptos estructuralistas - terminlolog{'}a                                                                                                                       |
-| Bakovi{'c}, E                                                                                                   | Hiatus resolution and incomplete identity                                                                                                                          |
-| Colina, Sonia                                                                                                   | Rasgos distintivos lecture                                                                                                                                         |
-| Olarrea, Antxon                                                                                                 | problema1                                                                                                                                                          |
-| Hanssen, Ferdy                                                                                                  | Installing fonts in LaTEX: a user{}s experience                                                                                                                    |
-| Drager, Katie                                                                                                   | A Novice{}s Guide to Understanding Mixed Effects Models                                                                                                            |
-| Anderson, Victoria B                                                                                            | Static palatography for language fieldwork                                                                                                                         |
-| Colina, Sonia                                                                                                   | Trancripci{'o}n de laterales - Ej                                                                                                                                  |
-| Bullock, BE                                                                                                     | Kreyol incursions into Dominican Spanish                                                                                                                           |
-| Colina, Sonia                                                                                                   | Neutralizaci{'o}n de constrastres - Lecture                                                                                                                        |
-| Alonso, A                                                                                                       | Una ley fonol{'o}gica del espa{~n}ol                                                                                                                               |
-| Harris, James W.                                                                                                | La espirantizaci{'o}n en castellano y la representaci{'o}n fonol{'o}gica autosegmental                                                                             |
-| Xie, Yihui                                                                                                      | knitr: A General-Purpose Tool for Dynamic Report Generation in R                                                                                                   |
-| Pallier, Christophe                                                                                             | Premiers pas en Emacs                                                                                                                                              |
-| McKee, E                                                                                                        | The Effects of Intensive Language Instruction on Student Performance in Beginning College French. (Report no. FL013910)                                            |
-| c(“Jaeger, T Florian”, “Graff, Peter”, “Croft, William”, “Pontillo, Daniel”)                                    | Mixed effect models for genetic and areal dependencies in linguistic typology                                                                                      |
-| Llisterri, Joaquim                                                                                              | Fon{'e}tica y fonolog{'}a del espa{~n}ol                                                                                                                           |
-| c(“van Leyden, Klaske”, “van Heuven, Vincent J”)                                                                | On the prosody of Orkney and Shetland dialects                                                                                                                     |
-| Myers, Scott                                                                                                    | F0 timing in Kinyarwanda                                                                                                                                           |
-| c(“Shively, R L”, “Cohen, A D”)                                                                                 | Development of Spanish requests and apologies during study abroad                                                                                                  |
-| Pallier, Christophe                                                                                             | TEX et BibTEX a\` la puissance Emacs                                                                                                                               |
-| R Core Team                                                                                                     | R: A Language and Environment for Statistical Computing                                                                                                            |
-| Dalmaijer, Edwin                                                                                                | Is the low-cost EyeTribe eye tracker any good for research?                                                                                                        |
-| Ricci, Vito                                                                                                     | R FUNCTIONS FOR REGRESSION ANALYSIS                                                                                                                                |
-| Dunbar, Robin I M                                                                                               | Theory of mind and the evolution of language                                                                                                                       |
-| Burns, Patrick                                                                                                  | The R Inferno                                                                                                                                                      |
-| Harris, James W.                                                                                                | The exponence of gender in Spanish                                                                                                                                 |
-| Escudero, Paola                                                                                                 | Native and Non-Native Speech Perception                                                                                                                            |
-| Achugar, Mariana                                                                                                | Counter-hegemonic language practices and ideologies Creating a new space and value for Spanish in Southwest Texas                                                  |
-| Lacabex, E G                                                                                                    | Relationship between perception and production in non-native speech                                                                                                |
-| Colina, Sonia                                                                                                   | Output-to-output Correspondence and the Emergence of the Unmarked in Spanish Plural Formation                                                                      |
-| Gray, James                                                                                                     | Textmate Power Editing for the Mac (Pragmatic, 2007)                                                                                                               |
-| Katz, J                                                                                                         | Compression effects in English                                                                                                                                     |
-| c(“Kohler, E”, “Keysers, C”, “Umilta, MA”, “Fogassi, L”)                                                        | Hearing sounds, understanding actions: action representation in mirror neurons                                                                                     |
-| Colina, Sonia                                                                                                   | Inventario de los fonemas y alofonos del espanol estandar                                                                                                          |
-| Colina, Sonia                                                                                                   | SILABIFICACI{'O}N Y LA TEOR{'I}A DE LA OPTIMIDAD                                                                                                                   |
-| Face, Timothy L                                                                                                 | Acquisition of the Spanish voiced spirants by second language learners                                                                                             |
-| c(“Klee, C A”, “Lynch, A”, “Tedick, D J”)                                                                       | Social factors and language proficiency in postsecondary Spanish immersion: Issues and implications                                                                |
-| van Leyden, Klaske                                                                                              | The relationship between vowel and consonant duration in Orkney and Shetland dialects                                                                              |
-| Pascal van Lieshout, Ph D                                                                                       | Short Tutorial                                                                                                                                                     |
-| c(“Peterson, Gordon E”, “Barney, Harold L”)                                                                     | Control Methods Used in a Study of the Vowels                                                                                                                      |
-| Morrison, Geoffrey Stewart                                                                                      | Towards a Quantitative Speech Learning Model (QSLM)                                                                                                                |
-| Kinginger, Celeste                                                                                              | Language learning and study abroad: A critical reading of research                                                                                                 |
-| Faraway, Julian                                                                                                 | Using R                                                                                                                                                            |
-| SCARPACE, DANIEL                                                                                                | The Acquisition of Resyllabification in Spanish by English Speakers                                                                                                |
-| c(“Ernestus, Mirjam”, “Torreira, Francisco”)                                                                    | Realization of voiceless stops and vowels in conversational French and Spanish                                                                                     |
-| Moyer, Melissa G                                                                                                | Research as Practice: Linking Theory, Method, and Data                                                                                                             |
-| Botello, Maria Teresa Perez                                                                                     | El refr{'a}n como texto oral y escrito                                                                                                                             |
-| Tremblay, Marie-Claude                                                                                          | Cross-Linguistic Influence in Third Language Acquisition: The Role of L2 Proficiency and L2 Exposure                                                               |
-| McKee, E                                                                                                        | The Effects of Intensive Language Instruction on Student Performance in Beginning College French.                                                                  |
-| Figueredo, Aurelio                                                                                              | Psych 507a                                                                                                                                                         |
-| Barrios, Shannon                                                                                                | Native Language Constraints on L2 Perception                                                                                                                       |
-| c(“Lotto, A J”, “Sato, M”, “Diehl, Randy L”)                                                                    | Mapping the task for the second language learner: The case of Japanese acquisition of /r/ and /l/                                                                  |
-| Murphy, Shirin                                                                                                  | Second Language Transfer During Third Language Acquisition                                                                                                         |
-| Kawahara, Shigeto                                                                                               | Praat Scripting for dummies                                                                                                                                        |
-| Colina, Sonia                                                                                                   | Acentuaci{'o}n                                                                                                                                                     |
-| Sternefeld, Wolfgand                                                                                            | linguex.sty Documentation                                                                                                                                          |
-| Pease, Emma                                                                                                     | Tree Macros                                                                                                                                                        |
-| Ord{'o}{~n}ez, Francisco                                                                                        | The clausal architecture of Spanish: a comparative study                                                                                                           |
-| Hutchins, Sean                                                                                                  | The Linked Dual Representation model of vocal perception and production                                                                                            |
-| Harris, James W.                                                                                                | Syllable structure and stress in Spanish: a nonlinear analysis                                                                                                     |
-| Colina, Sonia                                                                                                   | Transcripci{'o}n de nasales - EJ                                                                                                                                   |
-| Casillas, Joseph Vincent                                                                                        | La vibrante m{'u}ltiple intervoc{'a}lica. Los ejercicios de canto como ayuda a su pronunciaci{'o}n en espa{~n}ol                                                   |
-| Torreira, Francisco                                                                                             | Aspirated Stops in Andalusian Spanish                                                                                                                              |
-| Soskuthy, Marton                                                                                                | Generalised additive mixed models for dynamic analysis in linguistics: a practical introduction                                                                    |
-| c(“Boersma, Paul”, “Escudero, Paola”, “Hayes, R”)                                                               | Learning abstract phonological from auditory phonetic categories: An integrated model for the acquisition of language-specific sound categories                    |
-| c(“Williams, D”, “Escudero, Paola”)                                                                             | Native and Non-Native Speech Perception                                                                                                                            |
-| Morrison, Geoffrey Stewart                                                                                      | Manuscript: DE070483 Revised Date: 28 January 2008L1-Spanish speakers{} acquisition of the English                                                                 |
-| Crowhurst, MJ                                                                                                   | Diminutives and augmentatives in Mexican Spanish: a prosodic analysis                                                                                              |
-| Maclagan, M                                                                                                     | Getting fed up with our feet: Contrast maintenance and the New Zealand English {}short{} front vowel shift                                                         |
-| H, Swaroop C                                                                                                    | A Byte of Python                                                                                                                                                   |
-| Parrell, Benjamin                                                                                               | How /b, d, g/ differ from /p, t, k/ in Spanish: A dynamic account                                                                                                  |
-| Gillespie, Maureen                                                                                              | Categorical Variables in Regression Analyses                                                                                                                       |
-| c(“Siskind, Jeffrey Mark”, “Dimitriadis, Alexis”)                                                               | Qtree, a LATEX tree-drawing package                                                                                                                                |
-| c(“Hay, Jennifer”, “Warren, P”)                                                                                 | Factors influencing speech perception in the context of a merger-in-progress                                                                                       |
-| Zivanovic, Saso                                                                                                 | Forest: a pgf/TikZ-based package for drawing linguistic trees                                                                                                      |
-| Silva, Thais Crist{'o}faro                                                                                      | Fon{'e}tica e fonologia do portugu{^e}s                                                                                                                            |
-| Leisch, Friedrich                                                                                               | Sweave users manual                                                                                                                                                |
-| Cross, I                                                                                                        | Music, mind and evolution                                                                                                                                          |
-| c(“Ernestus, Mirjam”, “Warner, Natasha”)                                                                        | An introduction to reduced pronunciation variants                                                                                                                  |
-| Sanders, Nathan                                                                                                 | Documentation for the                                                                                                                                              |
-| c(“Hualde, Jos{\\’e} Ignacio”, “Lujanbio, Oihana”)                                                              | Lexical tone and stress in Goizueta Basque                                                                                                                         |
-| Bataller, R                                                                                                     | Making a request for a service in Spanish: Pragmatic development in the study abroad setting                                                                       |
-| Correa, Maite                                                                                                   | Heritage Language Learner Programs and Life after the Classroom{}A Not So Critical Approach                                                                        |
-| Caffo, Brian                                                                                                    | Developing Data Products in R                                                                                                                                      |
-| Colina, Sonia                                                                                                   | Tabla de consonantes                                                                                                                                               |
-| c(“Lee, Shinsook”, “Cho, Mi-Hui”)                                                                               | An OT account of the precedence relationship between perception and production in the acquisition of English stress                                                |
-| Meijer, Erik                                                                                                    | The apacite package                                                                                                                                                |
-| c(“McMurray, Bob”, “Beckman, Jill”, “Helgason, P”, “Ringen, C”)                                                 | Rate effects on Swedish VOT: Evidence for phonological overspecification                                                                                           |
-| Winter, Bodo                                                                                                    | Pseudoreplication in phonetic research                                                                                                                             |
-| Simonet, Miquel                                                                                                 | Introduction to R                                                                                                                                                  |
-| Manning, Christopher                                                                                            | Logistic regression (with R)                                                                                                                                       |
-| Baker, Adam                                                                                                     | The ot-tableau package                                                                                                                                             |
-| Mehotcheva, Teodora H                                                                                           | After the fiesta is over: foreign language attrition of Spanish in Dutch and German Erasmus Students                                                               |
-| Jaeger, T Florian                                                                                               | Praat scripting tutorial Basics                                                                                                                                    |
-| Fukui, Rei                                                                                                      | TIPA Manual                                                                                                                                                        |
-| Magloire, J                                                                                                     | A cross-language comparison of speaking rate effects on the production of voice onset time in English and Spanish                                                  |
-| Merker, B                                                                                                       | Synchronous chorusing and human origins                                                                                                                            |
-| Harris, James W.                                                                                                | With respect to metrical constituents in Spanish                                                                                                                   |
-| c(“Prieto, Pilar”, “Torreira, Francisco”)                                                                       | The segmental anchoring hypothesis revisited: Syllable structure and speech rate effects on peak timing in Spanish                                                 |
-| c(“Ortega-Llebaria, M”, “Faulkner, A”, “Hazan, V”)                                                              | Auditory-visual L2 speech perception: Effects of visual cues and acoustic-phonetic context for Spanish learners of English                                         |
-| Colina, Sonia                                                                                                   | La s{'}laba handout                                                                                                                                                |
-| Hattori, Kota                                                                                                   | Examination of the Relationship between L2 Perception and Production: An Investigation of English /r/-/l/ Perception and Production by Adult Japanese Speakers     |
-| Locklin, Jason                                                                                                  | R notes for experimental psychology                                                                                                                                |
-| Schmidt, Walter                                                                                                 | Font selection in LATEX: The most frequently asked questions                                                                                                       |
-| Sundara, M                                                                                                      | Acoustic-phonetics of coronal stops: A cross-language study of Canadian English and Canadian French                                                                |
-| Colina, Sonia                                                                                                   | Acentuaci{'o}n - handout08                                                                                                                                         |
-| c(“Giannakopoulou, A”, “Uther, M”, “Ylinen, S”)                                                                 | Enhanced plasticity in spoken language acquisition for child learners: Evidence from phonetic training studies in child and adult learners of English              |
-| Gorman, Kyle                                                                                                    | On VARBRUL {} Or, The Spirit of {}74                                                                                                                               |
-| c(“Nadeu, Marianna”, “Hualde, Jos{\\’e} Ignacio”)                                                               | Lenition and Phonemic Overlap in Rome Italian                                                                                                                      |
-| Hualde, Jos{'e} Ignacio                                                                                         | Silabeo y estructura morf{'e}mica en espa{~n}ol                                                                                                                    |
-| Lipski, J                                                                                                       | Aspects of Ecuadorian vowel reduction                                                                                                                              |
-| c(“Cole, J”, “McMurray, Bob”, “Munson, Cheyenne”, “Linebaugh, G”)                                               | Unmasking the acoustic effects of vowel-to-vowel coarticulation: A statistical modeling approach                                                                   |
-| c(“Birdsong, D”, “Gertken, L M”, “Amengual, M”)                                                                 | Bilingual language profile: an easy-to-use instrument to assess bilingualism                                                                                       |
-| Mueller, Mareike                                                                                                | Learners’ identity negotiations and beliefs about pronunciation in study abroad contexts                                                                           |
-| Llisterri, Joaquim                                                                                              | Las tecnolog{'}as del habla                                                                                                                                        |
-| c(“Laks, John Goldsmith”, “Bernard”)                                                                            | Generative phonology: its origins, its principles, and its successors                                                                                              |
-| Wiley, Caroline R H                                                                                             | Emacs and R Integration via ESS: Installation How-To                                                                                                               |
-| c(“Oetiker, Tobias”, “Partl, Hubert”, “Hyna, Irene”, “Schlegl, Elizabeth”)                                      | The Not So Short Introduction to LATEX2\(\varepsilon\)                                                                                                             |
-| Bajuniemi, Abby                                                                                                 | Teaching Intervention on the Pronunciation of Spanish Intervocalic /d/                                                                                             |
-| Colina, Sonia                                                                                                   | Cuadro de rasgos                                                                                                                                                   |
-| Hirschorn, Philip                                                                                               | Using the exam document class                                                                                                                                      |
-| Moore, Ryan T                                                                                                   | How to Insert BibTEX Entries into a CV, Syllabus, . . .                                                                                                            |
-| Escudero, Paola                                                                                                 | Multilingual sound perception and word recognition                                                                                                                 |
-| Colina, Sonia                                                                                                   | Rasgos distintivos-summary fall 2010                                                                                                                               |
-| Park, Hanyong                                                                                                   | Detecting foreign accent in monosyllables: The role of L1 phonotactics                                                                                             |
-| Hualde, Jos{'e} Ignacio                                                                                         | Spanish /i/ and related sounds: An exercise in phonemic analysis                                                                                                   |
-| Ernestus, Mirjam                                                                                                | PartB2\_ForeignCasualSpeech                                                                                                                                        |
-| Colina, Sonia                                                                                                   | Transcripci{'o}n EJ - Hualde et al                                                                                                                                 |
-| c(“Boersma, Paul”, “Weenink, David”)                                                                            | Praat: doing phonetics by computer                                                                                                                                 |
-| c(“Mertz, Andrew”, “Slough, William”)                                                                           | Beamer by Example                                                                                                                                                  |
-| Escudero, Paola                                                                                                 | Developmental patterns in the adult L2 acquisition of new contrasts: the acoustic cue weighting in the perception of Scottish tense/lax vowels by Spanish speakers |
-| c(“Burgaleta, Miguel”, “Baus, Cristina”, “D{\\’\\i}az, Bego{\\~n}a”, “Sebasti{\\’a}n-Gall{\\’e}s, N{\\’u}ria”)  | Brain structure is related to speech perception abilities in bilinguals                                                                                            |
-| Simonet, Miquel                                                                                                 | textbf{The phonetics and phonology of bilingualism}                                                                                                                |
-| c(“Gulian, M”, “Escudero, Paola”, “Boersma, Paul”)                                                              | Supervision hampers distributional learning of vowel contrasts                                                                                                     |
-| c(“D{\\’\\i}az, Bego{\\~n}a”, “Mitterer, Holger”, “Broersma, Mirjam”, “Sebasti{\\’a}n-Gall{\\’e}s, N{\\’u}ria”) | Individual differences in late bilinguals’ L2 phonological processes: From acoustic-phonetic analysis to lexical access                                            |
-| Bereznak, Catherine                                                                                             | Review of: a grammar of Comanche, by Jean Ormsbee Charney                                                                                                          |
-| Recasens, Daniel                                                                                                | Lingual kinematics and coarticulation for alveolopalatal and velar consonants in Catalan                                                                           |
-| Kartushina, Natalia                                                                                             | On the effects of L2 perception and of individual differences in L1 production on L2 pronunciation                                                                 |
-| Simonet, Miquel                                                                                                 | Intonational convergence in language contact: Utterance-final F0 contours in Catalan{}Spanish early bilinguals                                                     |
-| c(“Morrison, G”, “Escudero, Paola”)                                                                             | A cross-dialect comparison of Peninsula-and Peruvian-Spanish vowels                                                                                                |
-| c(“Piske, Thorsten”, “Flege, James E”, “MacKay, Ian R. A.”)                                                     | The production of English vowels by fluent early and late Italian-English bilinguals                                                                               |
-| Lawrence, Michael A                                                                                             | Package {}ez{}                                                                                                                                                     |
-| Caffo, Brian                                                                                                    | Regression Models for Data Science in R                                                                                                                            |
-| Loureiro-Rodr{'}guez, Ver{'o}nica                                                                               | Conflicting values at a conflicting age                                                                                                                            |
-| Guion, Susan G                                                                                                  | The role of perception in the sound change of velar palatalization                                                                                                 |
-| Woolard, KA                                                                                                     | Between friends: Gender, peer group structure, and bilingualism in urban Catalonia                                                                                 |
-| Xie, Yihui                                                                                                      | knitr Graphics Manual                                                                                                                                              |
-| c(“Montaruli, E”, “Bourhis, RY”)                                                                                | Identity, language, and ethnic relations in the Bilingual Autonomous Communities of Spain                                                                          |
-| c(“Ernestus, Mirjam”, “Torreira, Francisco”)                                                                    | Vowel elision in casual French: The case of vowel/e/in the word c’{'e}tait                                                                                         |
-| Morrison, Geoffrey Stewart                                                                                      | L1 {&} L2 Production and Perception of English and Spanish Vowels A Statistical Modelling Approach                                                                 |
-| c(“Ramachandra, V”, “Depalma, N”)                                                                               | The Role of Mirror Neurons in Processing Vocal Emotions: Evidence from Psychophysiological Data                                                                    |
-| Hualde, Jos{'e} Ignacio                                                                                         | Autosegmental and metrical spreading in the vowel-harmony systems of northwestern Spain                                                                            |
-| Wood, Denise                                                                                                    | A Primer for Linguists6 October 2009                                                                                                                               |
-| c(“Flege, James E”, “Munro, Murray J”, “MacKay, Ian R. A.”)                                                     | The effects of age of second language learning on the production of English vowels                                                                                 |
-| c(“Cooper, Natalie”, “Hsing, Pen-Yuan”)                                                                         | A Guide to Reproducible Code in Ecology and Evolution                                                                                                              |
-| Colina, Sonia                                                                                                   | No double plurals in dominican spanish: an optimality-theoretic account                                                                                            |
-| ROBINSON, DAVID                                                                                                 | INTRODUCTION TO EMPIRICAL BAYES                                                                                                                                    |
-| c(“Gordon, P C”, “Hendrick, Randall”, “Johnson, Marcus”)                                                        | Memory interference during language processing                                                                                                                     |
-| Colina, Sonia                                                                                                   | Estructura sil{'a}bica                                                                                                                                             |
-| Colina, Sonia                                                                                                   | Silabificaci{'o}n y diptongos - Ej                                                                                                                                 |
-| Cumming, Geoff                                                                                                  | Understanding The New Statistics: Effect Sizes, Confidence Intervals, and Meta-Analysis                                                                            |
-| c(“Flege, James E”, “Yeni-Komshian, Grace H”, “Liu, Serena”)                                                    | Age Constraints on Second-Language Acquisition                                                                                                                     |
-| Recasens, Daniel                                                                                                | An articulatory investigation of lingual coarticulatory resistance and aggressiveness for consonants and vowels in Catalan                                         |
-| Ernestus, Mirjam                                                                                                | European Research Council                                                                                                                                          |
-| Colina, Sonia                                                                                                   | Transcripci{'o}n EJ - Hualde et al.                                                                                                                                |
-| c(“Simonet, Miquel”, “Nadeu, Marianna”, “Hualde, Jos{\\’e} Ignacio”)                                            | Consonant lenition and phonological recategorization                                                                                                               |
-| Beaudrie, Sara                                                                                                  | Articles                                                                                                                                                           |
-| c(“Colina, Edited by Fernando Mart{\\’\\i}nez-Gil”, “Sonia”)                                                    | Optimality-Theoretic Studies in Spanish Phonology                                                                                                                  |
-| c(“Simonet, Miquel”, “Nadeu, Marianna”, “Hualde, Jos{\\’e} Ignacio”)                                            | Consonant lenition and phonological recategorization                                                                                                               |
-| Torres-Reyna, Oscar                                                                                             | Data Preparation/Descriptive Statistics                                                                                                                            |
-| Simonet, Miquel                                                                                                 | Technology in Phonetic Science: Setting Up a Basic Phonetics Laboratory.                                                                                           |
-| c(“Harris, K”, “McGarr, N”)                                                                                     | Relationships between speech perception and speech production in normal hearing and hearing impaired subjects                                                      |
-| c(“Mackain, Kristine S”, “Best, Catherine T”, “Strange, Winifred”)                                              | Categorical Perception of English /r/ and /l/ by Japanese Bilinguals                                                                                               |
-| Colina, Sonia                                                                                                   | Identity constraints and Spanish resyllabification\* 1                                                                                                             |
-| Bickerton, D                                                                                                    | I chat, thereby I groom                                                                                                                                            |
-| Mart{'}nez-Gil, F                                                                                               | Obstruent vocalization in Chilean Spanish: A serial versus a constraint-based approach                                                                             |
-| c(“Piske, Thorsten”, “Flege, James E”, “MacKay, Ian R. A.”)                                                     | Factors affecting degree of foreign accent in an L2 : a review                                                                                                     |
-| c(“Escudero, Paola”, “Chl{\\’a}dkov{\\’a}, K”, “Boersma, Paul”)                                                 | Context-specific acoustic differences between Peruvian and Iberian Spanish vowels                                                                                  |
-| c(“Escudero, Paola”, “Rauber, Andr{\\’e}ia Schurt”, “Boersma, Paul”)                                            | A cross-dialect acoustic description of vowels: Brazilian and European Portuguese                                                                                  |
-| Tatman, Rachael                                                                                                 | A Very Brief Introduction To Bayesian Statistics for Linguists                                                                                                     |
+<table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
+
+<thead>
+
+<tr>
+
+<th style="text-align:right;">
+
+n
+
+</th>
+
+<th style="text-align:left;">
+
+BIBTEXKEY
+
+</th>
+
+<th style="text-align:left;">
+
+what
+
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td style="text-align:right;">
+
+1
+
+</td>
+
+<td style="text-align:left;">
+
+Colina:2008vb
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+2
+
+</td>
+
+<td style="text-align:left;">
+
+Zahn:2008um
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+3
+
+</td>
+
+<td style="text-align:left;">
+
+Hualde:1989tt
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+4
+
+</td>
+
+<td style="text-align:left;">
+
+Sundara:2008ys
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+5
+
+</td>
+
+<td style="text-align:left;">
+
+Bosque:2011vt
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+6
+
+</td>
+
+<td style="text-align:left;">
+
+Colina:2010uz
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+7
+
+</td>
+
+<td style="text-align:left;">
+
+Schertz:2013dfa
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+8
+
+</td>
+
+<td style="text-align:left;">
+
+Dunbar:1993ws
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+9
+
+</td>
+
+<td style="text-align:left;">
+
+Hickok:2003ui
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+10
+
+</td>
+
+<td style="text-align:left;">
+
+MacKay:1987vk
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES, JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+11
+
+</td>
+
+<td style="text-align:left;">
+
+Lakens:2017ts
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+12
+
+</td>
+
+<td style="text-align:left;">
+
+Anonymous:-7kf7cVY
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+13
+
+</td>
+
+<td style="text-align:left;">
+
+Michnowicz:2007uz
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES, JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+14
+
+</td>
+
+<td style="text-align:left;">
+
+ringen2012voicing
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+15
+
+</td>
+
+<td style="text-align:left;">
+
+Vogel:2006tv
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+16
+
+</td>
+
+<td style="text-align:left;">
+
+Akustyk
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES, JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+17
+
+</td>
+
+<td style="text-align:left;">
+
+Casillas:2009vn
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+18
+
+</td>
+
+<td style="text-align:left;">
+
+Correa:2008p87
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES, JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+19
+
+</td>
+
+<td style="text-align:left;">
+
+Healy:2011wf
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+20
+
+</td>
+
+<td style="text-align:left;">
+
+Teetor:2011wm
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+21
+
+</td>
+
+<td style="text-align:left;">
+
+Caramazza:1973gk
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+22
+
+</td>
+
+<td style="text-align:left;">
+
+Peng:2015tu
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+23
+
+</td>
+
+<td style="text-align:left;">
+
+Anonymous:TQAAGnIB
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+24
+
+</td>
+
+<td style="text-align:left;">
+
+Pakin:2009wp
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+25
+
+</td>
+
+<td style="text-align:left;">
+
+vanLeussen:2011ur
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+26
+
+</td>
+
+<td style="text-align:left;">
+
+myers2005vowel
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+27
+
+</td>
+
+<td style="text-align:left;">
+
+Colina:2010tja
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+28
+
+</td>
+
+<td style="text-align:left;">
+
+Bakovic:2007un
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+29
+
+</td>
+
+<td style="text-align:left;">
+
+Colina:2008ve
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+30
+
+</td>
+
+<td style="text-align:left;">
+
+Olarrea:2011tj
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+31
+
+</td>
+
+<td style="text-align:left;">
+
+Hanssen:2012un
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+32
+
+</td>
+
+<td style="text-align:left;">
+
+Drager:2010te
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+33
+
+</td>
+
+<td style="text-align:left;">
+
+anderson2008static
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+34
+
+</td>
+
+<td style="text-align:left;">
+
+Colina:2010uj
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+35
+
+</td>
+
+<td style="text-align:left;">
+
+Bullock:2008us
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+36
+
+</td>
+
+<td style="text-align:left;">
+
+Colina:2010vu
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+37
+
+</td>
+
+<td style="text-align:left;">
+
+Alonso:1945vn
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+38
+
+</td>
+
+<td style="text-align:left;">
+
+Harris:1984wx
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+39
+
+</td>
+
+<td style="text-align:left;">
+
+Anonymous:8c7\_DpUJ
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+40
+
+</td>
+
+<td style="text-align:left;">
+
+Pallier:2000ta
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+41
+
+</td>
+
+<td style="text-align:left;">
+
+McKee:1983vo
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+42
+
+</td>
+
+<td style="text-align:left;">
+
+Jaeger:ed
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+43
+
+</td>
+
+<td style="text-align:left;">
+
+Llisterri:2011tw
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+44
+
+</td>
+
+<td style="text-align:left;">
+
+leyden2006prosody
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+45
+
+</td>
+
+<td style="text-align:left;">
+
+myers2003f0
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+46
+
+</td>
+
+<td style="text-align:left;">
+
+Shively:2008wa
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+47
+
+</td>
+
+<td style="text-align:left;">
+
+Pallier:2012uy
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+48
+
+</td>
+
+<td style="text-align:left;">
+
+RCoreTeam2012
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES, JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+49
+
+</td>
+
+<td style="text-align:left;">
+
+Anonymous:2014cg
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+50
+
+</td>
+
+<td style="text-align:left;">
+
+Ricci:2005vf
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+51
+
+</td>
+
+<td style="text-align:left;">
+
+Dunbar:1998us
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+52
+
+</td>
+
+<td style="text-align:left;">
+
+Anonymous:DZnMd13t
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+53
+
+</td>
+
+<td style="text-align:left;">
+
+Harris:1991wm
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+54
+
+</td>
+
+<td style="text-align:left;">
+
+Anonymous:kaB9ANNg
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+55
+
+</td>
+
+<td style="text-align:left;">
+
+Achugar:2008wb
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+56
+
+</td>
+
+<td style="text-align:left;">
+
+Lacabex:ty
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+57
+
+</td>
+
+<td style="text-align:left;">
+
+Colina:2006uf
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+58
+
+</td>
+
+<td style="text-align:left;">
+
+Gray:2007tx
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+59
+
+</td>
+
+<td style="text-align:left;">
+
+katz2012compression
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+60
+
+</td>
+
+<td style="text-align:left;">
+
+Kohler:2002tu
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+61
+
+</td>
+
+<td style="text-align:left;">
+
+Colina:2010tx
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+62
+
+</td>
+
+<td style="text-align:left;">
+
+Colina:2010tjb
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+63
+
+</td>
+
+<td style="text-align:left;">
+
+Face:2009vi
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+64
+
+</td>
+
+<td style="text-align:left;">
+
+Lynch:2001vq
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+65
+
+</td>
+
+<td style="text-align:left;">
+
+van2002relationship
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+66
+
+</td>
+
+<td style="text-align:left;">
+
+PascalvanLieshout:2003ws
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+67
+
+</td>
+
+<td style="text-align:left;">
+
+Peterson1952
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+68
+
+</td>
+
+<td style="text-align:left;">
+
+Morrison:2005tt
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+69
+
+</td>
+
+<td style="text-align:left;">
+
+Kinginger:2009tc
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES, JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+70
+
+</td>
+
+<td style="text-align:left;">
+
+Faraway:2011to
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+71
+
+</td>
+
+<td style="text-align:left;">
+
+Anonymous:MVThQNOE
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+72
+
+</td>
+
+<td style="text-align:left;">
+
+Torreira:2011jo
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+73
+
+</td>
+
+<td style="text-align:left;">
+
+Moyer:2008tz
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+74
+
+</td>
+
+<td style="text-align:left;">
+
+Botello:2010p108
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+75
+
+</td>
+
+<td style="text-align:left;">
+
+Tremblay:2006vb
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+76
+
+</td>
+
+<td style="text-align:left;">
+
+McKee:1983vb
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES, JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+77
+
+</td>
+
+<td style="text-align:left;">
+
+Figueredo:2013vl
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+78
+
+</td>
+
+<td style="text-align:left;">
+
+Barrios:IFybV93w
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES, JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+79
+
+</td>
+
+<td style="text-align:left;">
+
+Lotto:2004wt
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+80
+
+</td>
+
+<td style="text-align:left;">
+
+Murphy:2003tv
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+81
+
+</td>
+
+<td style="text-align:left;">
+
+Kawahara:2011uo
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+82
+
+</td>
+
+<td style="text-align:left;">
+
+Colina:2008tp
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+83
+
+</td>
+
+<td style="text-align:left;">
+
+Sternefeld:2009ua
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+84
+
+</td>
+
+<td style="text-align:left;">
+
+Pease:2011wo
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+85
+
+</td>
+
+<td style="text-align:left;">
+
+ordonez2000clausal
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+86
+
+</td>
+
+<td style="text-align:left;">
+
+Hutchins:2013ct
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+87
+
+</td>
+
+<td style="text-align:left;">
+
+Harris:1982vd
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES, JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+88
+
+</td>
+
+<td style="text-align:left;">
+
+Colina:2010ws
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+89
+
+</td>
+
+<td style="text-align:left;">
+
+Casillas:2010we
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+90
+
+</td>
+
+<td style="text-align:left;">
+
+Torreira:2005us
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+91
+
+</td>
+
+<td style="text-align:left;">
+
+Soskuthy:2017ui
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+92
+
+</td>
+
+<td style="text-align:left;">
+
+Boersma:2003wg
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+93
+
+</td>
+
+<td style="text-align:left;">
+
+Williams:2014tc
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+94
+
+</td>
+
+<td style="text-align:left;">
+
+Morrison:2008wy
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+95
+
+</td>
+
+<td style="text-align:left;">
+
+Crowhurst:1992ve
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+96
+
+</td>
+
+<td style="text-align:left;">
+
+Maclagan:2007vp
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+97
+
+</td>
+
+<td style="text-align:left;">
+
+Anonymous:yGUo8Lyr
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+98
+
+</td>
+
+<td style="text-align:left;">
+
+parrell2010b
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+99
+
+</td>
+
+<td style="text-align:left;">
+
+Gillespie:2011ug
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+100
+
+</td>
+
+<td style="text-align:left;">
+
+Siskind:2009vr
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+101
+
+</td>
+
+<td style="text-align:left;">
+
+Hay:2006wp
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+102
+
+</td>
+
+<td style="text-align:left;">
+
+Anonymous:TQdisolA
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+103
+
+</td>
+
+<td style="text-align:left;">
+
+Silva:2014ts
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+104
+
+</td>
+
+<td style="text-align:left;">
+
+Leisch:2008wa
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+105
+
+</td>
+
+<td style="text-align:left;">
+
+Cross:2001ur
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+106
+
+</td>
+
+<td style="text-align:left;">
+
+Ernestus:2011vb
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+107
+
+</td>
+
+<td style="text-align:left;">
+
+Sanders:2012wz
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+108
+
+</td>
+
+<td style="text-align:left;">
+
+hualde2008lexical
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+109
+
+</td>
+
+<td style="text-align:left;">
+
+bataller2010making
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+110
+
+</td>
+
+<td style="text-align:left;">
+
+Correa:vo
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+111
+
+</td>
+
+<td style="text-align:left;">
+
+Anonymous:mgnEjvuA
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+112
+
+</td>
+
+<td style="text-align:left;">
+
+Colina:2010tj
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+113
+
+</td>
+
+<td style="text-align:left;">
+
+Lee:2011cg
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+114
+
+</td>
+
+<td style="text-align:left;">
+
+Meijer:1994tm
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+115
+
+</td>
+
+<td style="text-align:left;">
+
+beckman2011rate
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+116
+
+</td>
+
+<td style="text-align:left;">
+
+Winter:2011uz
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+117
+
+</td>
+
+<td style="text-align:left;">
+
+Simonet:2010wg
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+118
+
+</td>
+
+<td style="text-align:left;">
+
+Manning:2007vi
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+119
+
+</td>
+
+<td style="text-align:left;">
+
+Baker:2010ui
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+120
+
+</td>
+
+<td style="text-align:left;">
+
+mehotcheva2010after
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES, JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+121
+
+</td>
+
+<td style="text-align:left;">
+
+Jaeger:2004vz
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+122
+
+</td>
+
+<td style="text-align:left;">
+
+Fukui:2004vq
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+123
+
+</td>
+
+<td style="text-align:left;">
+
+Magloire:2000ud
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+124
+
+</td>
+
+<td style="text-align:left;">
+
+Merker:2000uv
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+125
+
+</td>
+
+<td style="text-align:left;">
+
+Harris:1992tr
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+126
+
+</td>
+
+<td style="text-align:left;">
+
+Prieto:2007tw
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+127
+
+</td>
+
+<td style="text-align:left;">
+
+OrtegaLlebaria:2001wl
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+128
+
+</td>
+
+<td style="text-align:left;">
+
+Colina:2008wl
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+129
+
+</td>
+
+<td style="text-align:left;">
+
+Hattori:2010vv
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+130
+
+</td>
+
+<td style="text-align:left;">
+
+Locklin:2008vn
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+131
+
+</td>
+
+<td style="text-align:left;">
+
+Schmidt:2006tp
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+132
+
+</td>
+
+<td style="text-align:left;">
+
+sundara2005acoustic
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+133
+
+</td>
+
+<td style="text-align:left;">
+
+Colina:2008vv
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+134
+
+</td>
+
+<td style="text-align:left;">
+
+Giannakopoulou:2013ef
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+135
+
+</td>
+
+<td style="text-align:left;">
+
+Gorman:2009vz
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+136
+
+</td>
+
+<td style="text-align:left;">
+
+Nadeu:2012ht
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+137
+
+</td>
+
+<td style="text-align:left;">
+
+Hualde:1989ve
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+138
+
+</td>
+
+<td style="text-align:left;">
+
+Lipski:1990p201
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+139
+
+</td>
+
+<td style="text-align:left;">
+
+McMurray:2010ep
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+140
+
+</td>
+
+<td style="text-align:left;">
+
+Amengual
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+141
+
+</td>
+
+<td style="text-align:left;">
+
+mueller2011learners
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES, JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+142
+
+</td>
+
+<td style="text-align:left;">
+
+Llisterri:2012ut
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+143
+
+</td>
+
+<td style="text-align:left;">
+
+Laks:2012vx
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+144
+
+</td>
+
+<td style="text-align:left;">
+
+Wiley:2008wb
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+145
+
+</td>
+
+<td style="text-align:left;">
+
+Oetiker:2011vt
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+146
+
+</td>
+
+<td style="text-align:left;">
+
+bajuniemi2013teaching
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES, JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+147
+
+</td>
+
+<td style="text-align:left;">
+
+Colina:2008uw
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+148
+
+</td>
+
+<td style="text-align:left;">
+
+Hirschorn:2011tm
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+149
+
+</td>
+
+<td style="text-align:left;">
+
+Moore:2011vd
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+150
+
+</td>
+
+<td style="text-align:left;">
+
+Escudero:2007wn
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+151
+
+</td>
+
+<td style="text-align:left;">
+
+Colina:2010uf
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+152
+
+</td>
+
+<td style="text-align:left;">
+
+Park:2013gr
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+153
+
+</td>
+
+<td style="text-align:left;">
+
+Hualde:1997tq
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+154
+
+</td>
+
+<td style="text-align:left;">
+
+Ernestus:2010vt
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+155
+
+</td>
+
+<td style="text-align:left;">
+
+Colina:2008ud
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+156
+
+</td>
+
+<td style="text-align:left;">
+
+praat
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES, JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+157
+
+</td>
+
+<td style="text-align:left;">
+
+Anonymous:2005vf
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+158
+
+</td>
+
+<td style="text-align:left;">
+
+escudero2000developmental
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+159
+
+</td>
+
+<td style="text-align:left;">
+
+Burgaleta:2013cr
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+160
+
+</td>
+
+<td style="text-align:left;">
+
+Simonet:2014uy
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+161
+
+</td>
+
+<td style="text-align:left;">
+
+Gulian:2007vc
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES, JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+162
+
+</td>
+
+<td style="text-align:left;">
+
+diaz2012individual
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+163
+
+</td>
+
+<td style="text-align:left;">
+
+Bereznak:1995vn
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+164
+
+</td>
+
+<td style="text-align:left;">
+
+Recasens:2010vc
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+165
+
+</td>
+
+<td style="text-align:left;">
+
+Kartushina:2014cg
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+166
+
+</td>
+
+<td style="text-align:left;">
+
+simonet2011intonational
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+167
+
+</td>
+
+<td style="text-align:left;">
+
+Morrison:2007ur
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+168
+
+</td>
+
+<td style="text-align:left;">
+
+Piske:2002to
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+169
+
+</td>
+
+<td style="text-align:left;">
+
+Lawrence:2012ud
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+170
+
+</td>
+
+<td style="text-align:left;">
+
+Anonymous:CAHnH-l3
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+171
+
+</td>
+
+<td style="text-align:left;">
+
+LoureiroRodriguez:2008ua
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+172
+
+</td>
+
+<td style="text-align:left;">
+
+Guion:1998wq
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+173
+
+</td>
+
+<td style="text-align:left;">
+
+Woolard:1997uj
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+174
+
+</td>
+
+<td style="text-align:left;">
+
+Anonymous:mCkzXHwO
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+175
+
+</td>
+
+<td style="text-align:left;">
+
+Montaruli:2011ue
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+176
+
+</td>
+
+<td style="text-align:left;">
+
+Ernestus:2011ky
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+177
+
+</td>
+
+<td style="text-align:left;">
+
+Morrison:2006wn
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+178
+
+</td>
+
+<td style="text-align:left;">
+
+Ramachandra:2009tx
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+179
+
+</td>
+
+<td style="text-align:left;">
+
+Hualde:1989vr
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+180
+
+</td>
+
+<td style="text-align:left;">
+
+Wood:2009ux
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+181
+
+</td>
+
+<td style="text-align:left;">
+
+Munro1996
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+182
+
+</td>
+
+<td style="text-align:left;">
+
+Cooper:2017ve
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+183
+
+</td>
+
+<td style="text-align:left;">
+
+Colina:2006ug
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+184
+
+</td>
+
+<td style="text-align:left;">
+
+Anonymous:QobCWDq7
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+185
+
+</td>
+
+<td style="text-align:left;">
+
+gordon2001memory
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+186
+
+</td>
+
+<td style="text-align:left;">
+
+Colina:2008vz
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+187
+
+</td>
+
+<td style="text-align:left;">
+
+Colina:2010tp
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+188
+
+</td>
+
+<td style="text-align:left;">
+
+Cumming:2011ua
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+189
+
+</td>
+
+<td style="text-align:left;">
+
+Flege1999b
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+190
+
+</td>
+
+<td style="text-align:left;">
+
+Recasens:2009vc
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+191
+
+</td>
+
+<td style="text-align:left;">
+
+Ernestus:2012vr
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+192
+
+</td>
+
+<td style="text-align:left;">
+
+Colina:2010ud
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+193
+
+</td>
+
+<td style="text-align:left;">
+
+Nadeu:2011vx
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+194
+
+</td>
+
+<td style="text-align:left;">
+
+Beaudrie:2007ti
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+195
+
+</td>
+
+<td style="text-align:left;">
+
+Colina:2007vp
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+196
+
+</td>
+
+<td style="text-align:left;">
+
+simonet2011vx
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+197
+
+</td>
+
+<td style="text-align:left;">
+
+TorresReyna:2011wf
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+198
+
+</td>
+
+<td style="text-align:left;">
+
+simonet2011
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+199
+
+</td>
+
+<td style="text-align:left;">
+
+Harris:1980ua
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES, JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+200
+
+</td>
+
+<td style="text-align:left;">
+
+Mackain1981
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES, JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+201
+
+</td>
+
+<td style="text-align:left;">
+
+Colina:1997uu
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+202
+
+</td>
+
+<td style="text-align:left;">
+
+Bickerton:1996vf
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+203
+
+</td>
+
+<td style="text-align:left;">
+
+MartinezGil:1997vt
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+204
+
+</td>
+
+<td style="text-align:left;">
+
+Piske2001
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+205
+
+</td>
+
+<td style="text-align:left;">
+
+chladkova2011context
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+206
+
+</td>
+
+<td style="text-align:left;">
+
+escudero2009cross
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+207
+
+</td>
+
+<td style="text-align:left;">
+
+Tatman:2013um
+
+</td>
+
+<td style="text-align:left;">
+
+JOURNAL
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 ``` r
 unlink("cache", recursive = TRUE)
