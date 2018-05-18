@@ -72,7 +72,7 @@ bib %>%
   slice(., 1:25) %>% 
   ggplot(., aes(x = JOURNAL, y = counts, label = counts)) + 
     geom_bar(stat = "identity", color = 'black', 
-             fill = 'lightblue', width = 0.1) + 
+             fill = 'grey50', width = 0.5) + 
     geom_point(pch = 21, size = 10, color = 'black', fill = 'lightgrey') + 
     geom_text() + 
     labs(y = "Count", x = "Journal") + 
@@ -80,7 +80,7 @@ bib %>%
     coord_flip() 
 ```
 
-<img src="https://i.imgur.com/XmrJyqc.png" width="960" />
+<img src="https://i.imgur.com/wZdb8ws.png" width="960" />
 
 ## Authors
 
