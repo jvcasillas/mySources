@@ -43,6 +43,8 @@ download.file(fileUrl, destfile = "papers.bib", method = "curl")
 bib <- bib2df("papers.bib") 
 ```
 
+    ## Warning in bib2df_tidy(bib, separate_names): NAs introduced by coercion
+
     ## Column `YEAR` contains character strings.
     ##               No coercion to numeric applied.
 
@@ -61,7 +63,7 @@ xtabs(~CATEGORY, data = bib) %>%
     coord_flip() 
 ```
 
-<img src="https://i.imgur.com/9d4wkXa.png" width="960" />
+<img src="https://i.imgur.com/rlpGIbI.png" width="960" />
 
 ## Journals
 
@@ -83,7 +85,7 @@ bib %>%
     coord_flip() 
 ```
 
-<img src="https://i.imgur.com/wZdb8ws.png" width="960" />
+<img src="https://i.imgur.com/HpxqDTQ.png" width="960" />
 
 ## Authors
 
@@ -108,7 +110,7 @@ top_authors %>%
     coord_flip()
 ```
 
-<img src="https://i.imgur.com/ql6tjL7.png" width="960" />
+<img src="https://i.imgur.com/Vp8qwW1.png" width="960" />
 
 ## Co-authors
 
@@ -124,7 +126,7 @@ bib %>%
     labs(x = "Publication Year", y = "Coauthors per Publication")
 ```
 
-<img src="https://i.imgur.com/Vxq51rT.png" width="960" />
+<img src="https://i.imgur.com/SXG1bpE.png" width="960" />
 
 ### Co-authors network
 
@@ -158,7 +160,7 @@ cograph %>%
   theme_void()
 ```
 
-<img src="https://i.imgur.com/G0t0erj.png" width="960" />
+<img src="https://i.imgur.com/kOmUHDf.png" width="960" />
 
 ### Betweenness centrality
 
@@ -178,18 +180,20 @@ betweenness(cograph) %>%
     coord_flip()
 ```
 
-<img src="https://i.imgur.com/2Kw0D5z.png" width="960" />
+<img src="https://i.imgur.com/RnF74fJ.png" width="960" />
 
 ## Publication Years
 
 ``` r
 bib %>% 
   ggplot(., aes(x = YEAR)) + 
-    geom_histogram(binwidth = 1, color = 'black', fill = 'grey60') + 
-    scale_x_continuous(breaks = seq(1900, 2020, 10))
+    geom_histogram(binwidth = 1, color = 'black', fill = 'grey60', stat = "count") + 
+    scale_x_discrete(breaks = seq(1900, 2020, 10))
 ```
 
-<img src="https://i.imgur.com/sTa0Mkh.png" width="960" />
+    ## Warning: Ignoring unknown parameters: binwidth, bins, pad
+
+<img src="https://i.imgur.com/DgJZ633.png" width="960" />
 
 ## Missing fields
 
@@ -217,7 +221,7 @@ bib %>%
     coord_flip()
 ```
 
-<img src="https://i.imgur.com/00ppWJv.png" width="960" />
+<img src="https://i.imgur.com/bpD0wke.png" width="960" />
 
 ## List of incomplete articles
 
@@ -9193,11 +9197,150 @@ VOLUME, NUMBER, JOURNAL
 
 </tr>
 
+<tr>
+
+<td style="text-align:right;">
+
+315
+
+</td>
+
+<td style="text-align:left;">
+
+Waller:aa
+
+</td>
+
+<td style="text-align:left;">
+
+Documenting and evaluating {Data} {Science} contributions in academic
+promotion in {Departments} of {Statistics} and {Biostatistics
+
+</td>
+
+<td style="text-align:left;">
+
+YEAR, VOLUME, PAGES, NUMBER, JOURNAL
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+316
+
+</td>
+
+<td style="text-align:left;">
+
+Escudero:2014aa
+
+</td>
+
+<td style="text-align:left;">
+
+Magnitude of phonetic distinction predicts success at early word
+learning in native and non-native accents
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES, NUMBER
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+317
+
+</td>
+
+<td style="text-align:left;">
+
+McCarthy:2014aa
+
+</td>
+
+<td style="text-align:left;">
+
+Speech {Perception} and {Production} by {Sequential} {Bilingual}
+{Children}: {A} {Longitudinal} {Study} of {Voice} {Onset} {Time}
+{Acquisition
+
+</td>
+
+<td style="text-align:left;">
+
+VOLUME, NUMBER
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+318
+
+</td>
+
+<td style="text-align:left;">
+
+Antoniou:2019aa
+
+</td>
+
+<td style="text-align:left;">
+
+The {Advantages} of {Bilingualism} {Debate
+
+</td>
+
+<td style="text-align:left;">
+
+PAGES
+
+</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align:right;">
+
+319
+
+</td>
+
+<td style="text-align:left;">
+
+Wilson:2014aa
+
+</td>
+
+<td style="text-align:left;">
+
+Using ultrasound for teaching and researching articulation
+
+</td>
+
+<td style="text-align:left;">
+
+YEAR
+
+</td>
+
+</tr>
+
 </tbody>
 
 </table>
-
-``` r
-unlink("cache", recursive = TRUE)
-unlink("figure", recursive = TRUE)
-```
